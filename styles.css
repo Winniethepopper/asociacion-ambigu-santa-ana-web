@@ -143,6 +143,18 @@ button { -webkit-tap-highlight-color: transparent; }
 .feature-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .2s, object-position .2s; }
 .feature-photo span { position: absolute; z-index: 1; bottom: 22px; left: 23px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .18em; }
 
+.terrace-section { background: var(--soft); }
+.terrace-heading { max-width: 620px; }
+.terrace-heading h2 { margin: 12px 0 10px; font-size: clamp(38px, 5vw, 62px); font-weight: 700; line-height: 1; letter-spacing: -.065em; }
+.terrace-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.terrace-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.terrace-photo { min-width: 0; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #e5e6e7; box-shadow: 0 12px 30px rgba(0, 0, 0, .06); }
+.terrace-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .3s ease; }
+.terrace-photo:hover img { transform: scale(1.025); }
+.terrace-photo-sign img { object-position: center 61%; }
+.terrace-photo-tables img { object-position: 43% center; }
+.terrace-photo-view img { object-position: center 63%; }
+
 .info-band { padding: 31px 0; background: var(--soft); }
 .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .info-grid > div { padding-left: 16px; border-left: 2px solid var(--ink); }
@@ -207,6 +219,8 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 @media (max-width: 700px) {
   .menu-grid { grid-template-columns: 1fr; }
+  .terrace-gallery { grid-template-columns: 1fr; gap: 12px; }
+  .terrace-photo { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 620px) {
   .container, .hero-content { width: calc(100% - 32px); }
