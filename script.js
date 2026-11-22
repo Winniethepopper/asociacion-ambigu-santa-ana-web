@@ -27,7 +27,7 @@ const menuItems = [
   { name: 'Zumo natural', category: 'Bebidas', price: 2.5, desc: 'Zumo natural.', image: 'zumo-natural.jpg' }
 ].map(item => ({
   ...item,
-  displayImage: item.image === 'bocadillo-jamon-serrano.png' ? item.image : `framed/${item.image}`
+  displayImage: item.image === 'bocadillo-jamon-serrano.png' ? item.image : `framed/${item.image}?v=2`
 }));
 
 const menuGrid = document.getElementById('menuGrid');
