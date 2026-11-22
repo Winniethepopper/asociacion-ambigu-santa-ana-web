@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <header class="topbar">
@@ -25,6 +25,7 @@
         <a href="#especialidades">Especialidades</a>
         <a href="#terraza">Terraza</a>
         <a href="#comedor">Comedor</a>
+        <a href="#ubicacion">Ubicación</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button id="settingsButton" class="settings-button" type="button" aria-label="Editar fotografías" aria-controls="photoEditor" aria-expanded="false" title="Editar fotografías">⚙</button>
@@ -35,6 +36,7 @@
       <a href="#especialidades">Especialidades</a>
       <a href="#terraza">Terraza</a>
       <a href="#comedor">Comedor</a>
+      <a href="#ubicacion">Ubicación</a>
       <a href="#contacto">Contacto</a>
     </div>
   </header>
@@ -143,11 +145,27 @@
       </div>
     </section>
 
-    <section class="info-band">
-      <div class="container info-grid">
-        <div><span class="info-label">DIRECCIÓN</span><strong>Pl. Julián Jiménez, 4</strong></div>
-        <div><span class="info-label">LOCALIDAD</span><strong>23700 Linares, Jaén</strong></div>
-        <div><span class="info-label">TE ESPERAMOS</span><strong>Asociación Ambigu Santa Ana</strong></div>
+    <section id="ubicacion" class="section location-section">
+      <div class="container location-layout">
+        <div class="location-copy">
+          <div class="eyebrow dark">ENCUÉNTRANOS</div>
+          <h2>Ven a visitarnos.</h2>
+          <p>Estamos en Santa Ana, Linares. Consulta el mapa y encuentra cómo llegar.</p>
+          <div class="location-address">
+            <span class="info-label">DIRECCIÓN</span>
+            <strong>Pl. Julián Jiménez, 4<br>23700 Linares, Jaén</strong>
+          </div>
+          <a class="btn btn-dark" href="https://www.google.com/maps/place/El+Rinc%C3%B3n+de+Linares/@38.1063617,-3.6183367,17.38z/data=!4m15!1m8!3m7!1s0xd6e9b194e488519:0xb3b1dbb2639148ba!2sEl+Rinc%C3%B3n+de+Linares!8m2!3d38.1049729!4d-3.6202826!10e1!16s%2Fg%2F11nvlxn8zr!3m5!1s0xd6e9b194e488519:0xb3b1dbb2639148ba!8m2!3d38.1049729!4d-3.6202826!16s%2Fg%2F11nvlxn8zr?entry=ttu&amp;g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Localización</a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps?q=38.1049729%2C-3.6202826&amp;z=17&amp;output=embed"
+            title="Mapa de la ubicación compartida en Google Maps, Linares"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </section>
   </main>
@@ -157,12 +175,17 @@
       <div>
         <div class="footer-brand">ASOCIACIÓN AMBIGU SANTA ANA</div>
         <p>Desayunos y buenos momentos en Santa Ana, Linares.</p>
+        <div class="footer-contact">
+          <span>Teléfono</span>
+          <a href="tel:614866306">614 866 306</a>
+        </div>
       </div>
       <div class="footer-links">
         <a href="#carta">Carta</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#terraza">Terraza</a>
         <a href="#comedor">Comedor</a>
+        <a href="#ubicacion">Ubicación</a>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </div>
