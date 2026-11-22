@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
   <header class="topbar">
@@ -35,6 +35,7 @@
         </span>
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
         <a href="#carta">Carta</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#terraza">Terraza</a>
@@ -42,10 +43,11 @@
         <a href="#ubicacion">Ubicación</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button id="settingsButton" class="settings-button" type="button" aria-label="Editar fotografías" aria-controls="photoEditor" aria-expanded="false" title="Editar fotografías">⚙</button>
+      <button id="settingsButton" class="settings-button" type="button" aria-label="Editar carta y fotografías" aria-controls="photoEditor" aria-expanded="false" title="Editar carta y fotografías">⚙</button>
       <button id="menuBtn" class="menu-btn" type="button" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false">☰</button>
     </div>
     <div id="mobileNav" class="mobile-nav container">
+      <a href="#inicio">Inicio</a>
       <a href="#carta">Carta</a>
       <a href="#especialidades">Especialidades</a>
       <a href="#terraza">Terraza</a>
@@ -73,13 +75,13 @@
     <section id="especialidades" class="section featured-section">
       <div class="container">
         <div class="featured-heading">
-          <div class="eyebrow dark">NUESTRO RINCÓN</div>
-          <h2>Especialidades de la casa</h2>
-          <p>Desayunos, bocadillos y opciones dulces de la carta.</p>
+          <div class="eyebrow dark">UNA SELECCIÓN</div>
+          <h2>Una selección de la carta</h2>
+          <p>Tostadas, bocadillos y opciones dulces de la carta.</p>
         </div>
         <div id="featuredGrid" class="featured-grid"></div>
         <div class="feature-points">
-          <div><span>01</span><strong>Desayunos</strong><small>Tostadas y gratinadas para empezar el día.</small></div>
+          <div><span>01</span><strong>Tostadas</strong><small>Tostadas y gratinadas.</small></div>
           <div><span>02</span><strong>Bocadillos</strong><small>Opciones frías y calientes.</small></div>
           <div><span>03</span><strong>Un dulce final</strong><small>Gofres, crepes y bollería.</small></div>
         </div>
@@ -90,7 +92,7 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow dark">DESAYUNOS · BOCADILLOS · MÁS</div>
+            <div class="eyebrow dark">TOSTADAS · BOCADILLOS · MÁS</div>
             <h2>La carta</h2>
             <p>Busca tu favorito o explora las opciones por categoría.</p>
           </div>
@@ -215,7 +217,7 @@
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">ASOCIACIÓN AMBIGÚ SANTA ANA</div>
-        <p>Desayunos y buenos momentos en Santa Ana, Linares.</p>
+        <p>Tostadas, bocadillos y buenos momentos en Santa Ana, Linares.</p>
         <div class="footer-contact">
           <span>Teléfono</span>
           <a href="tel:614866306">614 866 306</a>
@@ -233,6 +235,21 @@
     <div class="container footer-bottom">© <span id="year"></span> Asociación Ambigú Santa Ana</div>
   </footer>
 
+  <nav class="mobile-bottom-nav" aria-label="Navegación rápida">
+    <a href="#inicio">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1V10Z"></path></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="#carta">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 5h16M4 12h16M4 19h16"></path><circle cx="7" cy="5" r="1"></circle><circle cx="7" cy="12" r="1"></circle><circle cx="7" cy="19" r="1"></circle></svg>
+      <span>Carta</span>
+    </a>
+    <a href="#ubicacion">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+      <span>Ubicación</span>
+    </a>
+  </nav>
+
   <dialog id="photoViewer" class="photo-viewer" aria-labelledby="photoViewerCaption">
     <button id="closePhotoViewer" class="photo-viewer-close" type="button" aria-label="Cerrar fotografía ampliada">×</button>
     <img id="photoViewerImage" alt="">
@@ -244,8 +261,8 @@
     <div class="editor-heading">
       <div>
         <div class="eyebrow dark">PERSONALIZA LA CARTA</div>
-        <h2 id="editorTitle">Editar fotografías</h2>
-        <p>Reemplaza cada imagen y ajusta su encuadre. Los cambios se guardan en este navegador.</p>
+        <h2 id="editorTitle">Editar carta y fotografías</h2>
+        <p>Organiza productos, categorías y fotos. Los cambios se guardan en este navegador.</p>
       </div>
       <button id="closeEditor" class="editor-close" type="button" aria-label="Cerrar editor">×</button>
     </div>
@@ -259,6 +276,36 @@
         <div class="editor-section-heading">
           <h3 id="productPhotosTitle">Fotos de la carta</h3>
           <span>26 productos</span>
+        </div>
+        <div class="menu-editor-controls">
+          <label class="editor-select-label" for="productPhotoCategoryFilter">
+            <span>Mostrar fotos de</span>
+            <select id="productPhotoCategoryFilter"></select>
+          </label>
+          <details class="category-manager">
+            <summary>Editar categorías</summary>
+            <div class="category-manager-grid">
+              <div class="category-manager-row">
+                <label class="editor-select-label" for="renameCategorySelect">
+                  <span>Categoría que quieres cambiar</span>
+                  <select id="renameCategorySelect"></select>
+                </label>
+                <label class="editor-select-label" for="renameCategoryInput">
+                  <span>Nuevo nombre</span>
+                  <input id="renameCategoryInput" type="text" maxlength="40" autocomplete="off">
+                </label>
+                <button id="renameCategoryButton" class="editor-action-button" type="button">Renombrar</button>
+              </div>
+              <div class="category-manager-row">
+                <label class="editor-select-label" for="newCategoryInput">
+                  <span>Añadir categoría</span>
+                  <input id="newCategoryInput" type="text" maxlength="40" autocomplete="off">
+                </label>
+                <button id="addCategoryButton" class="editor-action-button" type="button">Añadir</button>
+              </div>
+            </div>
+          </details>
+          <p class="editor-help">Cambia la categoría de cada producto o usa las flechas para ordenar sus fotos.</p>
         </div>
         <div id="productPhotoEditor" class="editor-list"></div>
       </section>
@@ -276,6 +323,6 @@
     </div>
   </aside>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

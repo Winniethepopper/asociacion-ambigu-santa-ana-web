@@ -1,24 +1,24 @@
 const menuItems = [
-  { name: 'Aceite y tomate', category: 'Desayunos', price: 1.5, desc: 'Pan tostado con aceite y tomate.', image: 'tostada-aceite-tomate.jpg' },
-  { name: 'Mantequilla', category: 'Desayunos', price: 1.5, desc: 'Pan tostado con mantequilla.', image: 'tostada-mantequilla.jpg' },
-  { name: 'Mantequilla y mermelada', category: 'Desayunos', price: 1.5, desc: 'Pan tostado con mantequilla y mermelada.', image: 'tostada-mermelada.jpg' },
-  { name: 'Sobrasada', category: 'Desayunos', price: 1.5, desc: 'Pan tostado con sobrasada.', image: 'tostada-sobrasada.jpg' },
-  { name: 'Paté', category: 'Desayunos', price: 1.5, desc: 'Pan tostado con paté.', image: 'tostada-pate.jpg' },
-  { name: 'Gratinada de jamón serrano y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con jamón serrano y queso.', image: 'tostada-jamon-serrano-queso.jpg' },
-  { name: 'Gratinada de jamón de York y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con jamón de York y queso.', image: 'tostada-york-queso.jpg' },
-  { name: 'Gratinada de pechuga de pavo y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con pechuga de pavo y queso.', image: 'tostada-pechuga-pavo-queso.jpg' },
-  { name: 'Gratinada de sobrasada y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con sobrasada y queso.', image: 'tostada-sobrasada-queso.jpg' },
-  { name: 'Gratinada de paté y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con paté y queso.', image: 'tostada-pate-queso.jpg' },
-  { name: 'Gratinada de atún y queso', category: 'Desayunos', price: 2, desc: 'Tostada gratinada con atún y queso.', image: 'tostada-atun-queso.jpg' },
-  { name: 'Jamón serrano', category: 'Bocadillos', price: 3.5, desc: 'Bocadillo de jamón serrano.', image: 'bocadillo-jamon-serrano.png' },
-  { name: 'Jamón de York', category: 'Bocadillos', price: 3.5, desc: 'Bocadillo de jamón de York.', image: 'bocadillo-york.jpg' },
-  { name: 'Pechuga de pavo', category: 'Bocadillos', price: 3.5, desc: 'Bocadillo de pechuga de pavo.', image: 'bocadillo-pavo.jpg' },
-  { name: 'Queso', category: 'Bocadillos', price: 3.5, desc: 'Bocadillo de queso.', image: 'bocadillo-queso.jpg' },
-  { name: 'Atún', category: 'Bocadillos', price: 3.5, desc: 'Bocadillo de atún.', image: 'bocadillo-atun.jpg' },
-  { name: 'Caliente de beicon', category: 'Bocadillos', price: 4.5, desc: 'Bocadillo caliente de beicon. Suplemento de beicon incluido.', image: 'bocadillo-beicon.jpg' },
-  { name: 'Caliente de lomo adobado', category: 'Bocadillos', price: 4, desc: 'Bocadillo caliente de lomo adobado.', image: 'bocadillo-lomo-adobado.jpg' },
-  { name: 'Caliente de tortilla de patatas', category: 'Bocadillos', price: 4, desc: 'Bocadillo caliente de tortilla de patatas.', image: 'bocadillo-tortilla-patatas.jpg' },
-  { name: 'Caliente de chistorra', category: 'Bocadillos', price: 4, desc: 'Bocadillo caliente de chistorra.', image: 'bocadillo-chistorra.jpg' },
+  { name: 'Aceite y tomate', category: 'Tostadas', price: 1.5, desc: 'Pan tostado con aceite y tomate.', image: 'tostada-aceite-tomate.jpg' },
+  { name: 'Mantequilla', category: 'Tostadas', price: 1.5, desc: 'Pan tostado con mantequilla.', image: 'tostada-mantequilla.jpg' },
+  { name: 'Mantequilla y mermelada', category: 'Tostadas', price: 1.5, desc: 'Pan tostado con mantequilla y mermelada.', image: 'tostada-mermelada.jpg' },
+  { name: 'Sobrasada', category: 'Tostadas', price: 1.5, desc: 'Pan tostado con sobrasada.', image: 'tostada-sobrasada.jpg' },
+  { name: 'Paté', category: 'Tostadas', price: 1.5, desc: 'Pan tostado con paté.', image: 'tostada-pate.jpg' },
+  { name: 'Gratinada de jamón serrano y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con jamón serrano y queso.', image: 'tostada-jamon-serrano-queso.jpg' },
+  { name: 'Gratinada de jamón de York y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con jamón de York y queso.', image: 'tostada-york-queso.jpg' },
+  { name: 'Gratinada de pechuga de pavo y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con pechuga de pavo y queso.', image: 'tostada-pechuga-pavo-queso.jpg' },
+  { name: 'Gratinada de sobrasada y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con sobrasada y queso.', image: 'tostada-sobrasada-queso.jpg' },
+  { name: 'Gratinada de paté y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con paté y queso.', image: 'tostada-pate-queso.jpg' },
+  { name: 'Gratinada de atún y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con atún y queso.', image: 'tostada-atun-queso.jpg' },
+  { name: 'Jamón serrano', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de jamón serrano.', image: 'bocadillo-jamon-serrano.png' },
+  { name: 'Jamón de York', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de jamón de York.', image: 'bocadillo-york.jpg' },
+  { name: 'Pechuga de pavo', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de pechuga de pavo.', image: 'bocadillo-pavo.jpg' },
+  { name: 'Queso', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de queso.', image: 'bocadillo-queso.jpg' },
+  { name: 'Atún', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de atún.', image: 'bocadillo-atun.jpg' },
+  { name: 'Caliente de beicon', category: 'Bocadillos calientes', price: 4.5, desc: 'Bocadillo caliente de beicon. Suplemento de beicon incluido.', image: 'bocadillo-beicon.jpg' },
+  { name: 'Caliente de lomo adobado', category: 'Bocadillos calientes', price: 4, desc: 'Bocadillo caliente de lomo adobado.', image: 'bocadillo-lomo-adobado.jpg' },
+  { name: 'Caliente de tortilla de patatas', category: 'Bocadillos calientes', price: 4, desc: 'Bocadillo caliente de tortilla de patatas.', image: 'bocadillo-tortilla-patatas.jpg' },
+  { name: 'Caliente de chistorra', category: 'Bocadillos calientes', price: 4, desc: 'Bocadillo caliente de chistorra.', image: 'bocadillo-chistorra.jpg' },
   { name: 'Sándwich mixto', category: 'Sándwiches', price: 3, desc: 'Sándwich mixto.', image: 'sandwich-mixto.jpg' },
   { name: 'Sándwich vegetal', category: 'Sándwiches', price: 3, desc: 'Lechuga, tomate, queso, mayonesa y atún.', image: 'sandwich-vegetal.jpg' },
   { name: 'Gofre', category: 'Dulces', price: 3, desc: 'Gofre.', image: 'gofre.jpg' },
@@ -32,7 +32,14 @@ const menuItems = [
     : `framed/${item.image}?v=2`
 }));
 
-const featuredProductNames = ['Jamón serrano', 'Gratinada de jamón serrano y queso', 'Gofre'];
+const featuredProductNames = [
+  'Jamón serrano',
+  'Gratinada de jamón serrano y queso',
+  'Caliente de beicon',
+  'Sándwich vegetal',
+  'Gofre',
+  'Zumo natural'
+];
 const spacePhotos = [
   { id: 'terraza-pizarra', title: 'Terraza · Pizarra', category: 'Terraza', src: 'assets/terrace/terraza-pizarra.jpg', x: 50, y: 61 },
   { id: 'terraza-mesas', title: 'Terraza · Mesas', category: 'Terraza', src: 'assets/terrace/terraza-mesas.jpg', x: 43, y: 50 },
@@ -64,10 +71,14 @@ const photoViewerCaption = document.getElementById('photoViewerCaption');
 const closePhotoViewer = document.getElementById('closePhotoViewer');
 const imageDatabaseName = 'santa-ana-photo-editor';
 const imageStoreName = 'photo-edits';
+const menuSettingsStoreName = 'menu-settings';
+const menuSettingsId = 'catalog';
 
 let activeCategory = 'Todas';
+let editorCategoryFilter = 'Todas';
 let imageDatabasePromise;
 let photoEdits = new Map();
+let menuSettings = { id: menuSettingsId, productCategories: {}, productOrder: [], customCategories: [] };
 let editorStorageError = null;
 let scrollObserver;
 let lastPhotoTrigger = null;
@@ -104,11 +115,32 @@ function escapeHtml(value) {
   }[character]));
 }
 
+function getProductCategory(item) {
+  return menuSettings.productCategories[item.image] || item.category;
+}
+
+function getMenuCategories() {
+  return [...new Set([...menuItems.map(getProductCategory), ...menuSettings.customCategories])];
+}
+
 function categories() {
-  return ['Todas', ...new Set(menuItems.map(item => item.category))];
+  return ['Todas', ...getMenuCategories()];
+}
+
+function getOrderedMenuItems() {
+  const order = new Map(menuSettings.productOrder.map((id, index) => [id, index]));
+  return [...menuItems].sort((a, b) => {
+    const aIndex = order.get(a.image);
+    const bIndex = order.get(b.image);
+    if (aIndex === undefined && bIndex === undefined) return 0;
+    if (aIndex === undefined) return 1;
+    if (bIndex === undefined) return -1;
+    return aIndex - bIndex;
+  });
 }
 
 function renderCategories() {
+  if (activeCategory !== 'Todas' && !getMenuCategories().includes(activeCategory)) activeCategory = 'Todas';
   categoryNav.innerHTML = categories().map(category => `
     <button class="category-btn${category === activeCategory ? ' active' : ''}"
       type="button" data-category="${escapeHtml(category)}"
@@ -139,7 +171,7 @@ function renderFeaturedProducts() {
       </button>
       <div class="featured-card-body">
         <div class="card-meta">
-          <span class="card-category">${escapeHtml(item.category)}</span>
+          <span class="card-category">${escapeHtml(getProductCategory(item))}</span>
           <span class="price">${item.price === null ? 'Consultar' : euro.format(item.price)}</span>
         </div>
         <h3>${escapeHtml(item.name)}</h3>
@@ -151,9 +183,10 @@ function renderFeaturedProducts() {
 
 function filteredItems() {
   const query = searchInput.value.trim().toLocaleLowerCase('es');
-  return menuItems.filter(item => {
-    const matchesCategory = activeCategory === 'Todas' || item.category === activeCategory;
-    const text = `${item.name} ${item.category} ${item.desc}`.toLocaleLowerCase('es');
+  return getOrderedMenuItems().filter(item => {
+    const category = getProductCategory(item);
+    const matchesCategory = activeCategory === 'Todas' || category === activeCategory;
+    const text = `${item.name} ${category} ${item.desc}`.toLocaleLowerCase('es');
     return matchesCategory && (!query || text.includes(query));
   });
 }
@@ -173,7 +206,7 @@ function renderCards() {
       </button>
       <div class="card-body">
         <div class="card-meta">
-          <span class="card-category">${escapeHtml(item.category)}</span>
+          <span class="card-category">${escapeHtml(getProductCategory(item))}</span>
           <span class="price">${item.price === null ? 'Consultar' : euro.format(item.price)}</span>
         </div>
         <h3>${escapeHtml(item.name)}</h3>
@@ -262,14 +295,20 @@ function openImageDatabase() {
   }
 
   return new Promise((resolve, reject) => {
-    const request = window.indexedDB.open(imageDatabaseName, 1);
+    const request = window.indexedDB.open(imageDatabaseName, 2);
     request.onupgradeneeded = () => {
       const database = request.result;
       if (!database.objectStoreNames.contains(imageStoreName)) {
         database.createObjectStore(imageStoreName, { keyPath: 'id' });
       }
+      if (!database.objectStoreNames.contains(menuSettingsStoreName)) {
+        database.createObjectStore(menuSettingsStoreName, { keyPath: 'id' });
+      }
     };
-    request.onsuccess = () => resolve(request.result);
+    request.onsuccess = () => {
+      request.result.onversionchange = () => request.result.close();
+      resolve(request.result);
+    };
     request.onerror = () => reject(request.error || new Error('No se pudo abrir el almacenamiento de fotografías.'));
     request.onblocked = () => reject(new Error('Cierra otras pestañas de esta carta y vuelve a intentarlo.'));
   });
@@ -297,6 +336,65 @@ async function loadPhotoEdits() {
   records.forEach(record => {
     if (!photoEdits.has(record.id)) photoEdits.set(record.id, record);
   });
+}
+
+function normalizeMenuSettings(record) {
+  const validIds = new Set(menuItems.map(item => item.image));
+  const productCategories = {};
+  const savedCategories = record?.productCategories;
+  if (savedCategories && typeof savedCategories === 'object' && !Array.isArray(savedCategories)) {
+    Object.entries(savedCategories).forEach(([id, name]) => {
+      const cleanName = typeof name === 'string' ? name.trim().slice(0, 40) : '';
+      if (validIds.has(id) && cleanName) productCategories[id] = cleanName;
+    });
+  }
+
+  const productCategoryNames = new Set(menuItems.map(item =>
+    (productCategories[item.image] || item.category).toLocaleLowerCase('es')
+  ));
+  const customCategories = [];
+  if (Array.isArray(record?.customCategories)) {
+    record.customCategories.forEach(name => {
+      const cleanName = typeof name === 'string' ? name.trim().slice(0, 40) : '';
+      const normalizedName = cleanName.toLocaleLowerCase('es');
+      if (cleanName && normalizedName !== 'todas' && !productCategoryNames.has(normalizedName) &&
+          !customCategories.some(category => category.toLocaleLowerCase('es') === normalizedName)) {
+        customCategories.push(cleanName);
+      }
+    });
+  }
+
+  const productOrder = [];
+  if (Array.isArray(record?.productOrder)) {
+    record.productOrder.forEach(id => {
+      if (validIds.has(id) && !productOrder.includes(id)) productOrder.push(id);
+    });
+  }
+  return { id: menuSettingsId, productCategories, productOrder, customCategories };
+}
+
+async function loadMenuSettings() {
+  const database = await getImageDatabase();
+  const record = await new Promise((resolve, reject) => {
+    const transaction = database.transaction(menuSettingsStoreName, 'readonly');
+    const request = transaction.objectStore(menuSettingsStoreName).get(menuSettingsId);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error || new Error('No se pudieron leer las categorías guardadas.'));
+    transaction.onabort = () => reject(transaction.error || new Error('Se interrumpió la lectura de las categorías.'));
+  });
+  if (record) menuSettings = normalizeMenuSettings(record);
+}
+
+async function saveMenuSettings(nextSettings) {
+  const database = await getImageDatabase();
+  const transaction = database.transaction(menuSettingsStoreName, 'readwrite');
+  transaction.objectStore(menuSettingsStoreName).put({ ...nextSettings, id: menuSettingsId });
+  await new Promise((resolve, reject) => {
+    transaction.oncomplete = resolve;
+    transaction.onerror = () => reject(transaction.error || new Error('No se pudieron guardar los cambios de la carta.'));
+    transaction.onabort = () => reject(transaction.error || new Error('Se interrumpió el guardado de la carta.'));
+  });
+  menuSettings = normalizeMenuSettings(nextSettings);
 }
 
 async function savePhotoEdit(id) {
@@ -335,7 +433,7 @@ function setEditorStatus(message, isError = false) {
   editorStatus.classList.toggle('error', isError);
 }
 
-function photoEditorCard(id, title, subtitle) {
+function photoEditorCard(id, title, subtitle, productControls = '') {
   const edit = getPhotoEdit(id);
   const src = edit.src || getOriginalImage(id);
   return `
@@ -352,6 +450,7 @@ function photoEditorCard(id, title, subtitle) {
             <button type="button" class="restore-photo" data-restore-photo="${escapeHtml(id)}">Restaurar</button>
           </div>
         </div>
+        ${productControls}
         <label class="upload-photo">
           <span>Cambiar fotografía</span>
           <input type="file" accept="image/*" data-upload-photo="${escapeHtml(id)}">
@@ -366,6 +465,62 @@ function photoEditorCard(id, title, subtitle) {
   `;
 }
 
+function renderProductPhotoEditor() {
+  const categoriesForProducts = getMenuCategories();
+  if (editorCategoryFilter !== 'Todas' && !categoriesForProducts.includes(editorCategoryFilter)) {
+    editorCategoryFilter = 'Todas';
+  }
+
+  const filter = document.getElementById('productPhotoCategoryFilter');
+  filter.innerHTML = [
+    '<option value="Todas">Todas las categorías</option>',
+    ...categoriesForProducts.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`)
+  ].join('');
+  filter.value = editorCategoryFilter;
+
+  const renameSelect = document.getElementById('renameCategorySelect');
+  renameSelect.innerHTML = categoriesForProducts
+    .map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`)
+    .join('');
+
+  const items = getOrderedMenuItems().filter(item =>
+    editorCategoryFilter === 'Todas' || getProductCategory(item) === editorCategoryFilter
+  );
+  if (!items.length) {
+    document.getElementById('productPhotoEditor').innerHTML =
+      '<p class="editor-empty">Todavía no hay productos en esta categoría. Puedes asignarlos desde “Todas las categorías”.</p>';
+    return;
+  }
+
+  document.getElementById('productPhotoEditor').innerHTML = items.map((item, index) => {
+    const category = getProductCategory(item);
+    const categoryOptions = categoriesForProducts.map(option =>
+      `<option value="${escapeHtml(option)}"${option === category ? ' selected' : ''}>${escapeHtml(option)}</option>`
+    ).join('');
+    const controls = `
+      <div class="editor-product-controls">
+        <label class="editor-select-label">
+          <span>Categoría del producto</span>
+          <select data-product-category="${escapeHtml(item.image)}"
+            aria-label="Cambiar categoría de ${escapeHtml(item.name)}">${categoryOptions}</select>
+        </label>
+        <div class="editor-order-actions" aria-label="Ordenar foto de ${escapeHtml(item.name)}">
+          <button type="button" data-move-product="up" data-product-id="${escapeHtml(item.image)}"
+            aria-label="Subir ${escapeHtml(item.name)}"${index === 0 ? ' disabled' : ''}>↑</button>
+          <button type="button" data-move-product="down" data-product-id="${escapeHtml(item.image)}"
+            aria-label="Bajar ${escapeHtml(item.name)}"${index === items.length - 1 ? ' disabled' : ''}>↓</button>
+        </div>
+      </div>
+    `;
+    return photoEditorCard(
+      item.image,
+      item.name,
+      `${category} · ${item.price === null ? 'Consultar' : euro.format(item.price)}`,
+      controls
+    );
+  }).join('');
+}
+
 function photoRange(id, field, label, value, min, max, step, formattedValue) {
   return `
     <label class="photo-range">
@@ -378,12 +533,124 @@ function photoRange(id, field, label, value, min, max, step, formattedValue) {
 
 function renderPhotoEditor() {
   document.getElementById('heroPhotoEditor').innerHTML = photoEditorCard('hero', 'Portada', 'Imagen principal de la página.');
-  document.getElementById('productPhotoEditor').innerHTML = menuItems.map(item =>
-    photoEditorCard(item.image, item.name, `${item.category} · ${item.price === null ? 'Consultar' : euro.format(item.price)}`)
-  ).join('');
+  renderProductPhotoEditor();
   document.getElementById('spacePhotoEditor').innerHTML = spacePhotos.map(photo =>
     photoEditorCard(photo.id, photo.title, photo.category)
   ).join('');
+}
+
+function renderMenuViews() {
+  renderCategories();
+  renderFeaturedProducts();
+  renderCards();
+  renderPhotoEditor();
+}
+
+async function renameMenuCategory() {
+  const categorySelect = document.getElementById('renameCategorySelect');
+  const previousName = categorySelect.value;
+  const newName = document.getElementById('renameCategoryInput').value.trim().slice(0, 40);
+  if (!newName || newName.toLocaleLowerCase('es') === 'todas') {
+    setEditorStatus('Escribe un nombre válido para la categoría.', true);
+    return;
+  }
+  if (newName.toLocaleLowerCase('es') !== previousName.toLocaleLowerCase('es') &&
+      getMenuCategories().some(category => category.toLocaleLowerCase('es') === newName.toLocaleLowerCase('es'))) {
+    setEditorStatus('Ya existe una categoría con ese nombre.', true);
+    return;
+  }
+  if (newName === previousName) {
+    setEditorStatus('Elige un nombre distinto para la categoría.', true);
+    return;
+  }
+
+  const productCategories = { ...menuSettings.productCategories };
+  getOrderedMenuItems().forEach(item => {
+    if (getProductCategory(item) === previousName) productCategories[item.image] = newName;
+  });
+  const customCategories = menuSettings.customCategories.map(category =>
+    category === previousName ? newName : category
+  );
+  try {
+    await saveMenuSettings({ ...menuSettings, productCategories, customCategories });
+    if (activeCategory === previousName) activeCategory = newName;
+    if (editorCategoryFilter === previousName) editorCategoryFilter = newName;
+    document.getElementById('renameCategoryInput').value = '';
+    renderMenuViews();
+    setEditorStatus(`Categoría cambiada a «${newName}».`);
+  } catch (error) {
+    setEditorStatus(`No se pudo cambiar la categoría: ${error.message}`, true);
+  }
+}
+
+async function addMenuCategory() {
+  const input = document.getElementById('newCategoryInput');
+  const newName = input.value.trim().slice(0, 40);
+  if (!newName || newName.toLocaleLowerCase('es') === 'todas') {
+    setEditorStatus('Escribe un nombre válido para la categoría.', true);
+    return;
+  }
+  if (getMenuCategories().some(category => category.toLocaleLowerCase('es') === newName.toLocaleLowerCase('es'))) {
+    setEditorStatus('Ya existe una categoría con ese nombre.', true);
+    return;
+  }
+  try {
+    await saveMenuSettings({
+      ...menuSettings,
+      customCategories: [...menuSettings.customCategories, newName]
+    });
+    input.value = '';
+    renderMenuViews();
+    setEditorStatus(`Categoría «${newName}» creada. Ya puedes asignarle productos.`);
+  } catch (error) {
+    setEditorStatus(`No se pudo crear la categoría: ${error.message}`, true);
+  }
+}
+
+async function changeProductCategory(id, category) {
+  const item = menuItems.find(product => product.image === id);
+  if (!item || !getMenuCategories().includes(category)) {
+    setEditorStatus('No se pudo cambiar la categoría del producto.', true);
+    renderPhotoEditor();
+    return;
+  }
+
+  const productCategories = { ...menuSettings.productCategories };
+  if (category === item.category) delete productCategories[id];
+  else productCategories[id] = category;
+
+  try {
+    await saveMenuSettings({ ...menuSettings, productCategories });
+    renderMenuViews();
+    setEditorStatus(`«${item.name}» ahora está en «${category}».`);
+  } catch (error) {
+    setEditorStatus(`No se pudo mover el producto: ${error.message}`, true);
+    renderPhotoEditor();
+  }
+}
+
+async function moveProductPhoto(id, direction) {
+  const visibleItems = getOrderedMenuItems().filter(item =>
+    editorCategoryFilter === 'Todas' || getProductCategory(item) === editorCategoryFilter
+  );
+  const currentIndex = visibleItems.findIndex(item => item.image === id);
+  const targetItem = visibleItems[currentIndex + direction];
+  if (currentIndex < 0 || !targetItem) return;
+
+  const productOrder = getOrderedMenuItems().map(item => item.image);
+  const currentOrderIndex = productOrder.indexOf(id);
+  const targetOrderIndex = productOrder.indexOf(targetItem.image);
+  [productOrder[currentOrderIndex], productOrder[targetOrderIndex]] =
+    [productOrder[targetOrderIndex], productOrder[currentOrderIndex]];
+
+  try {
+    await saveMenuSettings({ ...menuSettings, productOrder });
+    renderCards();
+    renderPhotoEditor();
+    setEditorStatus('Orden de las fotos guardado.');
+  } catch (error) {
+    setEditorStatus(`No se pudo guardar el orden: ${error.message}`, true);
+  }
 }
 
 function formatRange(field, value) {
@@ -411,7 +678,7 @@ function showPhotoEditor() {
   if (editorStorageError) {
     setEditorStatus(`No se pudo acceder al almacenamiento: ${editorStorageError.message}`, true);
   } else {
-    setEditorStatus('Las fotos y ajustes se guardan automáticamente en este navegador.');
+    setEditorStatus('Las fotos, categorías y el orden se guardan automáticamente en este navegador.');
   }
   document.getElementById('closeEditor').focus();
 }
@@ -545,7 +812,7 @@ document.addEventListener('keydown', event => {
 });
 photoEditor.addEventListener('keydown', event => {
   if (event.key !== 'Tab') return;
-  const focusable = [...photoEditor.querySelectorAll('button:not([disabled]), input:not([disabled])')];
+  const focusable = [...photoEditor.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), summary')];
   if (!focusable.length) return;
   const first = focusable[0];
   const last = focusable[focusable.length - 1];
@@ -561,7 +828,12 @@ photoEditor.addEventListener('input', event => {
   if (event.target.matches('input[type="range"][data-photo-field]')) updatePhotoEditorRange(event.target);
 });
 photoEditor.addEventListener('change', async event => {
-  if (event.target.matches('input[type="file"][data-upload-photo]')) {
+  if (event.target.id === 'productPhotoCategoryFilter') {
+    editorCategoryFilter = event.target.value;
+    renderProductPhotoEditor();
+  } else if (event.target.matches('select[data-product-category]')) {
+    await changeProductCategory(event.target.dataset.productCategory, event.target.value);
+  } else if (event.target.matches('input[type="file"][data-upload-photo]')) {
     await handlePhotoUpload(event.target);
   } else if (event.target.matches('input[type="range"][data-photo-field]')) {
     try {
@@ -573,6 +845,19 @@ photoEditor.addEventListener('change', async event => {
   }
 });
 photoEditor.addEventListener('click', async event => {
+  if (event.target.closest('#renameCategoryButton')) {
+    await renameMenuCategory();
+    return;
+  }
+  if (event.target.closest('#addCategoryButton')) {
+    await addMenuCategory();
+    return;
+  }
+  const moveButton = event.target.closest('[data-move-product]');
+  if (moveButton) {
+    await moveProductPhoto(moveButton.dataset.productId, moveButton.dataset.moveProduct === 'up' ? -1 : 1);
+    return;
+  }
   const deleteButton = event.target.closest('[data-delete-photo]');
   if (deleteButton) {
     await removePhoto(deleteButton.dataset.deletePhoto);
@@ -593,6 +878,11 @@ loadPhotoEdits()
     applyPhotoEdits();
     renderPhotoEditor();
   })
+  .catch(error => {
+    editorStorageError = error;
+  });
+loadMenuSettings()
+  .then(() => renderMenuViews())
   .catch(error => {
     editorStorageError = error;
   });

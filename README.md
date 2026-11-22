@@ -15,13 +15,13 @@ Carta digital estática y adaptable a móvil, con una identidad visual propia en
 
 Edita el array `menuItems` de `script.js` para cambiar nombres, categorías, precios o descripciones. Las tarjetas destacadas se eligen por nombre desde los mismos datos, sin duplicar precios. Para reemplazar fotos fácilmente, usa la tuerca de la página; si las cambias manualmente, actualiza la ruta de `image` y el archivo correspondiente de `assets/products/framed/`.
 
-Las imágenes de productos se pueden ampliar al pulsarlas. Si una foto de producto falta o no carga, su tarjeta muestra el aviso «Foto próximamente» en lugar de una imagen rota. Las categorías se generan desde las categorías existentes en `menuItems`.
+Las imágenes de productos se pueden ampliar al pulsarlas. Si una foto de producto falta o no carga, su tarjeta muestra el aviso «Foto próximamente» en lugar de una imagen rota. Las categorías iniciales se definen en `menuItems`; las creadas desde el editor se guardan en el navegador.
 
 El precio de la bollería casera aparece como «Consultar», ya que no se pudo leer en la carta original.
 
 ## Editar fotos desde la página
 
-Pulsa la tuerca del encabezado para abrir el editor. Puedes cambiar la portada, las fotos de los 26 productos y las de la terraza y el comedor; ajustar zoom y encuadre; eliminar una imagen de la vista, restaurarla o sustituirla por otra. Las fotos y ajustes se guardan automáticamente en el almacenamiento local de ese navegador. No se sincronizan con otros dispositivos ni modifican los archivos publicados.
+Pulsa la tuerca del encabezado para abrir el editor. Puedes cambiar la portada, las fotos de los 26 productos y las de la terraza y el comedor; ajustar zoom y encuadre; eliminar una imagen de la vista, restaurarla o sustituirla por otra. En las fotos de la carta también puedes filtrar por categoría, crear y renombrar categorías, cambiar productos de categoría y ordenar las fotos con las flechas. Las fotos, categorías y el orden se guardan automáticamente en ese navegador; no se sincronizan con otros dispositivos ni modifican los archivos publicados.
 
 ## Vista previa
 
