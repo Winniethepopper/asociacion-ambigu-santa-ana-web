@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asociación Ambigu Santa Ana | Carta</title>
+  <meta name="description" content="Carta digital de la Asociación Ambigu Santa Ana, Linares." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Asociación Ambigu Santa Ana">
+        <span class="brand-mark">AS</span>
+        <span>
+          <strong>ASOCIACIÓN</strong>
+          <b>AMBIGU SANTA ANA</b>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#carta">Carta</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button id="settingsButton" class="settings-button" type="button" aria-label="Editar fotografías" aria-controls="photoEditor" aria-expanded="false" title="Editar fotografías">⚙</button>
+      <button id="menuBtn" class="menu-btn" aria-label="Abrir menú" aria-controls="mobileNav" aria-expanded="false">☰</button>
+    </div>
+    <div id="mobileNav" class="mobile-nav container">
+      <a href="#carta">Carta</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div id="heroPhoto" class="hero-photo" role="img" aria-label="Imagen de portada de la carta"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="eyebrow">ASOCIACIÓN AMBIGU · SANTA ANA</div>
+        <h1>Un buen día<br>empieza en <span>Santa Ana</span></h1>
+        <p>Tostadas, bocadillos y algo dulce. Una carta para disfrutar sin prisas, en buena compañía.</p>
+        <a class="btn btn-light" href="#carta">Ver la carta</a>
+      </div>
+    </section>
+
+    <section id="carta" class="section section-menu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow dark">DESAYUNOS · BOCADILLOS · MÁS</div>
+            <h2>La carta</h2>
+            <p>Busca tu favorito o explora las opciones por categoría.</p>
+          </div>
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar en la carta…" aria-label="Buscar en la carta" />
+          </div>
+        </div>
+
+        <div id="categoryNav" class="category-nav" role="tablist" aria-label="Categorías de la carta"></div>
+        <div class="menu-toolbar">
+          <span id="resultsCount" aria-live="polite"></span>
+          <span>CARTA · ASOCIACIÓN SANTA ANA</span>
+        </div>
+        <div id="menuGrid" class="menu-grid"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-icon">⌕</div>
+          <h3>No hemos encontrado nada</h3>
+          <p>Prueba con otro nombre o categoría.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades" class="section featured-section">
+      <div class="container feature-grid">
+        <div class="feature-copy">
+          <div class="eyebrow dark">NUESTRO RINCÓN</div>
+          <h2>Un lugar para encontrarnos.</h2>
+          <p>Un espacio de barrio donde disfrutar de un desayuno, un bocadillo recién hecho o algo dulce.</p>
+          <div class="feature-points">
+            <div><span>01</span><strong>Desayunos</strong><small>Tostadas y gratinadas para empezar el día.</small></div>
+            <div><span>02</span><strong>Bocadillos</strong><small>Opciones frías y calientes, recién preparadas.</small></div>
+            <div><span>03</span><strong>Un dulce final</strong><small>Gofres, crepes y bollería.</small></div>
+          </div>
+        </div>
+        <div class="feature-photo">
+          <img src="assets/products/bocadillo-jamon-serrano.png" alt="Bocadillo de jamón serrano" loading="lazy" data-photo-id="bocadillo-jamon-serrano.png">
+          <span>UN CLÁSICO DE LA CASA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-band">
+      <div class="container info-grid">
+        <div><span class="info-label">DIRECCIÓN</span><strong>Pl. Julián Jiménez, 4</strong></div>
+        <div><span class="info-label">LOCALIDAD</span><strong>23700 Linares, Jaén</strong></div>
+        <div><span class="info-label">TE ESPERAMOS</span><strong>Asociación Ambigu Santa Ana</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">ASOCIACIÓN AMBIGU SANTA ANA</div>
+        <p>Desayunos y buenos momentos en Santa Ana, Linares.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#carta">Carta</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">© <span id="year"></span> Asociación Ambigu Santa Ana</div>
+  </footer>
+
+  <div id="editorBackdrop" class="editor-backdrop" hidden></div>
+  <aside id="photoEditor" class="photo-editor" role="dialog" aria-modal="true" aria-labelledby="editorTitle" aria-hidden="true">
+    <div class="editor-heading">
+      <div>
+        <div class="eyebrow dark">PERSONALIZA LA CARTA</div>
+        <h2 id="editorTitle">Editar fotografías</h2>
+        <p>Reemplaza cada imagen y ajusta su encuadre. Los cambios se guardan en este navegador.</p>
+      </div>
+      <button id="closeEditor" class="editor-close" type="button" aria-label="Cerrar editor">×</button>
+    </div>
+    <div id="editorStatus" class="editor-status" role="status" aria-live="polite"></div>
+    <div class="editor-scroll">
+      <section class="editor-section" aria-labelledby="heroPhotoTitle">
+        <h3 id="heroPhotoTitle">Imagen de portada</h3>
+        <div id="heroPhotoEditor"></div>
+      </section>
+      <section class="editor-section" aria-labelledby="productPhotosTitle">
+        <div class="editor-section-heading">
+          <h3 id="productPhotosTitle">Fotos de la carta</h3>
+          <span>26 platos</span>
+        </div>
+        <div id="productPhotoEditor" class="editor-list"></div>
+      </section>
+    </div>
+    <div class="editor-footer">
+      <span>Las fotos originales se mantienen para poder restaurarlas.</span>
+      <button id="closeEditorFooter" class="editor-done" type="button">Listo</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
