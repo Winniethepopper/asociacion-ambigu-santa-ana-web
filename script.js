@@ -61,6 +61,29 @@ let activeCategory = 'Todas';
 let imageDatabasePromise;
 let photoEdits = new Map();
 let editorStorageError = null;
+let scrollObserver;
+
+function observeScrollReveal(elements) {
+  if (!scrollObserver) return;
+  elements.forEach((element, index) => {
+    if (element.classList.contains('scroll-reveal')) return;
+    element.classList.add('scroll-reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`);
+    scrollObserver.observe(element);
+  });
+}
+
+function initializeScrollAnimations() {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+  observeScrollReveal(document.querySelectorAll('.hero-content, .section-head, .menu-toolbar, .menu-card, .feature-grid, .terrace-heading, .terrace-photo, .info-grid > div, .footer-grid, .footer-bottom'));
+}
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, character => ({
@@ -105,6 +128,7 @@ function renderCards() {
   const items = filteredItems();
   emptyState.hidden = items.length > 0;
   resultsCount.textContent = `${items.length} ${items.length === 1 ? 'opción' : 'opciones'}`;
+  if (scrollObserver) menuGrid.querySelectorAll('.scroll-reveal').forEach(card => scrollObserver.unobserve(card));
   menuGrid.innerHTML = items.map(item => `
     <article class="menu-card">
       <div class="card-media">
@@ -120,6 +144,7 @@ function renderCards() {
       </div>
     </article>
   `).join('');
+  observeScrollReveal(menuGrid.querySelectorAll('.menu-card'));
   applyPhotoEdits();
 }
 
@@ -429,6 +454,7 @@ photoEditor.addEventListener('click', async event => {
 renderCategories();
 renderCards();
 renderPhotoEditor();
+initializeScrollAnimations();
 loadPhotoEdits()
   .then(() => {
     applyPhotoEdits();
