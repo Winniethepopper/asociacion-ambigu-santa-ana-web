@@ -156,12 +156,11 @@ button { -webkit-tap-highlight-color: transparent; }
 .terrace-heading { max-width: 620px; }
 .terrace-heading h2 { margin: 12px 0 10px; font-size: clamp(38px, 5vw, 62px); font-weight: 700; line-height: 1; letter-spacing: -.065em; }
 .terrace-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-.terrace-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
-.terrace-photo { min-width: 0; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #e5e6e7; box-shadow: 0 12px 30px rgba(0, 0, 0, .06); }
+.terrace-gallery { display: grid; grid-template-columns: repeat(auto-fit, 144px); justify-content: center; gap: 16px; margin-top: 32px; }
+.terrace-photo { width: 144px; height: 144px; min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #e5e6e7; box-shadow: 0 12px 30px rgba(0, 0, 0, .06); }
 .terrace-photo img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .3s ease; }
 .terrace-photo:hover img { transform: scale(1.025); }
 .interior-section { background: var(--paper); }
-.interior-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .info-band { padding: 31px 0; background: var(--soft); }
 .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
@@ -232,9 +231,6 @@ button { -webkit-tap-highlight-color: transparent; }
 }
 @media (max-width: 700px) {
   .menu-grid { grid-template-columns: 1fr; }
-  .terrace-gallery { grid-template-columns: 1fr; gap: 12px; }
-  .terrace-photo { aspect-ratio: 4 / 3; }
-  .interior-gallery { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .container, .hero-content { width: calc(100% - 32px); }
@@ -253,6 +249,8 @@ button { -webkit-tap-highlight-color: transparent; }
   .menu-grid { grid-template-columns: 1fr; gap: 9px; }
   .menu-card { min-height: 122px; }
   .card-media { flex-basis: 112px; width: 112px; height: 112px; }
+  .terrace-gallery { grid-template-columns: repeat(auto-fit, 112px); gap: 12px; }
+  .terrace-photo { width: 112px; height: 112px; }
   .card-body { padding: 12px; }
   .menu-card h3 { font-size: 14px; }
   .menu-card p { font-size: 10px; }
