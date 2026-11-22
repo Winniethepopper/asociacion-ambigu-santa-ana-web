@@ -10,7 +10,7 @@ const menuItems = [
   { name: 'Gratinada de sobrasada y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con sobrasada y queso.', image: 'tostada-sobrasada-queso.jpg' },
   { name: 'Gratinada de paté y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con paté y queso.', image: 'tostada-pate-queso.jpg' },
   { name: 'Gratinada de atún y queso', category: 'Tostadas', price: 2, desc: 'Tostada gratinada con atún y queso.', image: 'tostada-atun-queso.jpg' },
-  { name: 'Jamón serrano', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de jamón serrano.', image: 'bocadillo-jamon-serrano.png' },
+  { name: 'Bocadillo de jamón de pata', category: 'Bocadillos fríos', price: 5, desc: 'Bocadillo de jamón de pata.', image: 'bocadillo-jamon-serrano.png' },
   { name: 'Jamón de York', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de jamón de York.', image: 'bocadillo-york.jpg' },
   { name: 'Pechuga de pavo', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de pechuga de pavo.', image: 'bocadillo-pavo.jpg' },
   { name: 'Queso', category: 'Bocadillos fríos', price: 3.5, desc: 'Bocadillo de queso.', image: 'bocadillo-queso.jpg' },
@@ -21,37 +21,37 @@ const menuItems = [
   { name: 'Caliente de chistorra', category: 'Bocadillos calientes', price: 4, desc: 'Bocadillo caliente de chistorra.', image: 'bocadillo-chistorra.jpg' },
   { name: 'Sándwich mixto', category: 'Sándwiches', price: 3, desc: 'Sándwich mixto.', image: 'sandwich-mixto.jpg' },
   { name: 'Sándwich vegetal', category: 'Sándwiches', price: 3, desc: 'Lechuga, tomate, queso, mayonesa y atún.', image: 'sandwich-vegetal.jpg' },
-  { name: 'Gofre', category: 'Dulces', price: 3, desc: 'Gofre.', image: 'gofre.jpg' },
+  { name: 'Gofre', category: 'Dulces', price: 3.5, desc: 'Gofre.', image: 'gofre.jpg' },
   { name: 'Crepe', category: 'Dulces', price: 3, desc: 'Crepe.', image: 'crepe.jpg' },
   { name: 'Bollería casera', category: 'Dulces', price: null, desc: 'Pregunta por la variedad y el precio del día.', image: 'croissant.jpg' },
   { name: 'Zumo natural', category: 'Bebidas', price: 2.5, desc: 'Zumo natural.', image: 'zumo-natural.jpg' }
 ].map(item => ({
   ...item,
-  displayImage: item.image === 'bocadillo-jamon-serrano.png'
-    ? 'framed/bocadillo-jamon-serrano.webp'
-    : `framed/${item.image}?v=2`
+  displayImage: `web/${item.image.replace(/\.[^.]+$/, '.webp')}`
 }));
 
-const featuredProductNames = [
-  'Jamón serrano',
-  'Gratinada de jamón serrano y queso',
-  'Caliente de beicon',
-  'Sándwich vegetal',
-  'Gofre',
-  'Zumo natural'
+const featuredProductIds = [
+  'bocadillo-jamon-serrano.png',
+  'tostada-jamon-serrano-queso.jpg',
+  'bocadillo-beicon.jpg',
+  'gofre.jpg'
 ];
+const specialtyProductIds = ['sandwich-vegetal.jpg', 'crepe.jpg', 'zumo-natural.jpg'];
 const spacePhotos = [
-  { id: 'terraza-pizarra', title: 'Terraza · Pizarra', category: 'Terraza', src: 'assets/terrace/terraza-pizarra.jpg', x: 50, y: 61 },
-  { id: 'terraza-mesas', title: 'Terraza · Mesas', category: 'Terraza', src: 'assets/terrace/terraza-mesas.jpg', x: 43, y: 50 },
-  { id: 'terraza-vista', title: 'Terraza · Vista general', category: 'Terraza', src: 'assets/terrace/terraza-vista.jpg', x: 50, y: 63 },
-  { id: 'comedor-barra', title: 'Comedor · Barra', category: 'Comedor', src: 'assets/interior/comedor-barra.jpg', x: 50, y: 50 },
-  { id: 'comedor-mesas', title: 'Comedor · Mesas', category: 'Comedor', src: 'assets/interior/comedor-mesas.jpg', x: 50, y: 50 },
-  { id: 'comedor-salon', title: 'Comedor · Salón', category: 'Comedor', src: 'assets/interior/comedor-salon.jpg', x: 50, y: 50 },
-  { id: 'comedor-pizarra', title: 'Comedor · Pizarra', category: 'Comedor', src: 'assets/interior/comedor-pizarra.jpg', x: 50, y: 25 }
+  { id: 'terraza-pizarra', title: 'Terraza · Pizarra', category: 'Terraza', src: 'assets/terrace/web/terraza-pizarra.webp', x: 50, y: 61 },
+  { id: 'terraza-mesas', title: 'Terraza · Mesas', category: 'Terraza', src: 'assets/terrace/web/terraza-mesas.webp', x: 43, y: 50 },
+  { id: 'terraza-vista', title: 'Terraza · Vista general', category: 'Terraza', src: 'assets/terrace/web/terraza-vista.webp', x: 50, y: 63 },
+  { id: 'comedor-barra', title: 'Comedor · Barra', category: 'Comedor', src: 'assets/interior/web/comedor-barra.webp', x: 50, y: 50 },
+  { id: 'comedor-mesas', title: 'Comedor · Mesas', category: 'Comedor', src: 'assets/interior/web/comedor-mesas.webp', x: 50, y: 50 },
+  { id: 'comedor-salon', title: 'Comedor · Salón', category: 'Comedor', src: 'assets/interior/web/comedor-salon.webp', x: 50, y: 50 },
+  { id: 'comedor-pizarra', title: 'Comedor · Pizarra', category: 'Comedor', src: 'assets/interior/web/comedor-pizarra.webp', x: 50, y: 25 }
 ];
 
 const menuGrid = document.getElementById('menuGrid');
 const featuredGrid = document.getElementById('featuredGrid');
+const specialtyGrid = document.getElementById('specialtyGrid');
+const mostOurSection = document.getElementById('mostOurSection');
+const specialtySection = document.getElementById('especialidades');
 const categoryNav = document.getElementById('categoryNav');
 const emptyState = document.getElementById('emptyState');
 const searchInput = document.getElementById('searchInput');
@@ -64,7 +64,7 @@ const photoEditor = document.getElementById('photoEditor');
 const editorBackdrop = document.getElementById('editorBackdrop');
 const editorStatus = document.getElementById('editorStatus');
 const heroPhoto = document.getElementById('heroPhoto');
-const heroImage = 'assets/products/framed/bocadillo-jamon-serrano.webp';
+const heroImage = 'assets/cover/web/hero-santa-ana.webp';
 const photoViewer = document.getElementById('photoViewer');
 const photoViewerImage = document.getElementById('photoViewerImage');
 const photoViewerCaption = document.getElementById('photoViewerCaption');
@@ -73,15 +73,26 @@ const imageDatabaseName = 'santa-ana-photo-editor';
 const imageStoreName = 'photo-edits';
 const menuSettingsStoreName = 'menu-settings';
 const menuSettingsId = 'catalog';
+const webImageDataLimit = 20 * 1024 * 1024;
 
 let activeCategory = 'Todas';
 let editorCategoryFilter = 'Todas';
 let imageDatabasePromise;
 let photoEdits = new Map();
-let menuSettings = { id: menuSettingsId, productCategories: {}, productOrder: [], customCategories: [] };
+let menuSettings = {
+  id: menuSettingsId,
+  productCategories: {},
+  productOrder: [],
+  customCategories: [],
+  productDetails: {},
+  customProducts: [],
+  contentVersion: 1
+};
 let editorStorageError = null;
 let scrollObserver;
 let lastPhotoTrigger = null;
+let productFieldSaveQueue = Promise.resolve();
+let menuSettingsSaveQueue = Promise.resolve();
 
 function observeScrollReveal(elements) {
   if (!scrollObserver) return;
@@ -119,8 +130,38 @@ function getProductCategory(item) {
   return menuSettings.productCategories[item.image] || item.category;
 }
 
+function getProductDetails(item) {
+  return menuSettings.productDetails[item.image] || {};
+}
+
+function getProductName(item) {
+  return getProductDetails(item).name || item.name;
+}
+
+function getProductDescription(item) {
+  const details = getProductDetails(item);
+  return Object.prototype.hasOwnProperty.call(details, 'description') ? details.description : item.desc;
+}
+
+function getProductPrice(item) {
+  const details = getProductDetails(item);
+  return Object.prototype.hasOwnProperty.call(details, 'price') ? details.price : item.price;
+}
+
+function isProductVisible(item) {
+  return getProductDetails(item).visible !== false;
+}
+
+function getAllMenuItems() {
+  return [...menuItems, ...menuSettings.customProducts];
+}
+
+function getProductImageSource(item) {
+  return item.isCustom ? item.webImage || item.originalImage : `assets/products/${item.displayImage}`;
+}
+
 function getMenuCategories() {
-  return [...new Set([...menuItems.map(getProductCategory), ...menuSettings.customCategories])];
+  return [...new Set([...getAllMenuItems().map(getProductCategory), ...menuSettings.customCategories])];
 }
 
 function categories() {
@@ -129,7 +170,7 @@ function categories() {
 
 function getOrderedMenuItems() {
   const order = new Map(menuSettings.productOrder.map((id, index) => [id, index]));
-  return [...menuItems].sort((a, b) => {
+  return getAllMenuItems().sort((a, b) => {
     const aIndex = order.get(a.image);
     const bIndex = order.get(b.image);
     if (aIndex === undefined && bIndex === undefined) return 0;
@@ -156,29 +197,35 @@ function renderCategories() {
   });
 }
 
-function renderFeaturedProducts() {
-  const items = featuredProductNames
-    .map(name => menuItems.find(item => item.name === name))
-    .filter(Boolean);
+function renderProductShowcase(grid, productIds, showLinks = false) {
+  const items = productIds
+    .map(id => getAllMenuItems().find(item => item.image === id))
+    .filter(item => item && isProductVisible(item));
 
-  featuredGrid.innerHTML = items.map(item => `
+  grid.innerHTML = items.map(item => `
     <article class="featured-card">
       <button class="featured-photo photo-trigger" type="button" data-photo-trigger
-        aria-label="Ampliar foto: ${escapeHtml(item.name)}">
-        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}"
+        aria-label="Ampliar foto: ${escapeHtml(getProductName(item))}">
+        <img src="${escapeHtml(getProductImageSource(item))}" alt="${escapeHtml(getProductName(item))}"
           loading="lazy" decoding="async" data-photo-id="${escapeHtml(item.image)}">
         <span class="photo-placeholder" hidden>Foto próximamente</span>
       </button>
       <div class="featured-card-body">
         <div class="card-meta">
           <span class="card-category">${escapeHtml(getProductCategory(item))}</span>
-          <span class="price">${item.price === null ? 'Consultar' : euro.format(item.price)}</span>
+          <span class="price">${getProductPrice(item) === null ? 'Consultar' : euro.format(getProductPrice(item))}</span>
         </div>
-        <h3>${escapeHtml(item.name)}</h3>
-        <a class="featured-card-link" href="#carta" data-featured-product="${escapeHtml(item.name)}">Ver en carta <span aria-hidden="true">→</span></a>
+        <h3>${escapeHtml(getProductName(item))}</h3>
+        <p class="showcase-description">${escapeHtml(getProductDescription(item))}</p>
+        ${showLinks ? `<a class="featured-card-link" href="#carta" data-featured-product="${escapeHtml(item.image)}">Ver en carta <span aria-hidden="true">→</span></a>` : ''}
       </div>
     </article>
   `).join('');
+}
+
+function renderFeaturedProducts() {
+  renderProductShowcase(featuredGrid, featuredProductIds, true);
+  renderProductShowcase(specialtyGrid, specialtyProductIds);
 }
 
 function filteredItems() {
@@ -186,34 +233,44 @@ function filteredItems() {
   return getOrderedMenuItems().filter(item => {
     const category = getProductCategory(item);
     const matchesCategory = activeCategory === 'Todas' || category === activeCategory;
-    const text = `${item.name} ${category} ${item.desc}`.toLocaleLowerCase('es');
-    return matchesCategory && (!query || text.includes(query));
+    const text = `${getProductName(item)} ${category} ${getProductDescription(item)}`.toLocaleLowerCase('es');
+    return isProductVisible(item) && matchesCategory && (!query || text.includes(query));
   });
 }
 
 function renderCards() {
   const items = filteredItems();
+  const showEditorialSections = activeCategory === 'Todas' && !searchInput.value.trim();
   emptyState.hidden = items.length > 0;
+  mostOurSection.hidden = !showEditorialSections || !featuredGrid.children.length;
+  specialtySection.hidden = !showEditorialSections || !specialtyGrid.children.length;
   resultsCount.textContent = `${items.length} ${items.length === 1 ? 'opción' : 'opciones'}`;
   if (scrollObserver) menuGrid.querySelectorAll('.scroll-reveal').forEach(card => scrollObserver.unobserve(card));
-  menuGrid.innerHTML = items.map(item => `
-    <article class="menu-card" data-product-name="${escapeHtml(item.name)}">
+  menuGrid.innerHTML = items.map((item, index) => {
+    const positionInPattern = index % 8;
+    const layoutClass = positionInPattern === 0
+      ? 'menu-card-wide'
+      : positionInPattern === 4 ? 'menu-card-wide menu-card-reverse' : '';
+    return `
+    <article class="menu-card ${layoutClass}" data-product-id="${escapeHtml(item.image)}"
+      data-product-name="${escapeHtml(getProductName(item))}">
       <button class="card-media photo-trigger" type="button" data-photo-trigger
-        aria-label="Ampliar foto: ${escapeHtml(item.name)}">
-        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}"
+        aria-label="Ampliar foto: ${escapeHtml(getProductName(item))}">
+        <img src="${escapeHtml(getProductImageSource(item))}" alt="${escapeHtml(getProductName(item))}"
           loading="lazy" decoding="async" data-photo-id="${escapeHtml(item.image)}">
         <span class="photo-placeholder" hidden>Foto próximamente</span>
       </button>
       <div class="card-body">
         <div class="card-meta">
           <span class="card-category">${escapeHtml(getProductCategory(item))}</span>
-          <span class="price">${item.price === null ? 'Consultar' : euro.format(item.price)}</span>
+          <span class="price">${getProductPrice(item) === null ? 'Consultar' : euro.format(getProductPrice(item))}</span>
         </div>
-        <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(item.desc)}</p>
+        <h3>${escapeHtml(getProductName(item))}</h3>
+        <p>${escapeHtml(getProductDescription(item))}</p>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
   observeScrollReveal(menuGrid.querySelectorAll('.menu-card'));
   applyPhotoEdits();
 }
@@ -230,13 +287,13 @@ function getPhotoEdit(id) {
   const savedEdit = photoEdits.get(id);
   if (savedEdit) return savedEdit;
   const spacePhoto = spacePhotos.find(photo => photo.id === id);
-  return { id, src: '', removed: false, zoom: 1, x: spacePhoto ? spacePhoto.x : 50, y: spacePhoto ? spacePhoto.y : 50 };
+  return { id, src: '', removed: false, zoom: 1, x: spacePhoto ? spacePhoto.x : id === 'hero' ? 80 : 50, y: spacePhoto ? spacePhoto.y : 50 };
 }
 
 function getOriginalImage(id) {
   if (id === 'hero') return heroImage;
-  const item = menuItems.find(product => product.image === id);
-  if (item) return `assets/products/${item.displayImage}`;
+  const item = getAllMenuItems().find(product => product.image === id);
+  if (item) return getProductImageSource(item);
   const spacePhoto = spacePhotos.find(photo => photo.id === id);
   return spacePhoto ? spacePhoto.src : '';
 }
@@ -293,7 +350,7 @@ function updatePhotoView(id) {
 
 function applyPhotoEdits() {
   updatePhotoView('hero');
-  menuItems.forEach(item => updatePhotoView(item.image));
+  getAllMenuItems().forEach(item => updatePhotoView(item.image));
   spacePhotos.forEach(photo => updatePhotoView(photo.id));
 }
 
@@ -347,7 +404,34 @@ async function loadPhotoEdits() {
 }
 
 function normalizeMenuSettings(record) {
-  const validIds = new Set(menuItems.map(item => item.image));
+  const customProducts = [];
+  if (Array.isArray(record?.customProducts)) {
+    record.customProducts.forEach(product => {
+      if (!product || typeof product !== 'object' || Array.isArray(product)) return;
+      const image = typeof product.image === 'string' ? product.image.trim().slice(0, 100) : '';
+      const name = typeof product.name === 'string' ? product.name.trim().slice(0, 100) : '';
+      const category = typeof product.category === 'string' ? product.category.trim().slice(0, 40) : '';
+      const description = typeof product.desc === 'string' ? product.desc.trim().slice(0, 300) : '';
+      const originalImage = typeof product.originalImage === 'string' &&
+        product.originalImage.startsWith('data:image/') &&
+        product.originalImage.length <= 14 * 1024 * 1024 ? product.originalImage : '';
+      const webImage = typeof product.webImage === 'string' &&
+        product.webImage.startsWith('data:image/') &&
+        product.webImage.length <= webImageDataLimit ? product.webImage : originalImage;
+      const price = product.price === null
+        ? null
+        : typeof product.price === 'number' && Number.isFinite(product.price) && product.price >= 0
+          ? product.price
+          : undefined;
+      if (!image.startsWith('custom-') || !name || !category || !originalImage || price === undefined ||
+          menuItems.some(item => item.image === image) ||
+          customProducts.some(item => item.image === image)) return;
+      customProducts.push({ image, name, category, desc: description, price, originalImage, webImage, displayImage: '', isCustom: true });
+    });
+  }
+
+  const allItems = [...menuItems, ...customProducts];
+  const validIds = new Set(allItems.map(item => item.image));
   const productCategories = {};
   const savedCategories = record?.productCategories;
   if (savedCategories && typeof savedCategories === 'object' && !Array.isArray(savedCategories)) {
@@ -357,7 +441,30 @@ function normalizeMenuSettings(record) {
     });
   }
 
-  const productCategoryNames = new Set(menuItems.map(item =>
+  const productDetails = {};
+  const savedDetails = record?.productDetails;
+  if (savedDetails && typeof savedDetails === 'object' && !Array.isArray(savedDetails)) {
+    Object.entries(savedDetails).forEach(([id, details]) => {
+      if (!validIds.has(id) || !details || typeof details !== 'object' || Array.isArray(details)) return;
+      const cleanDetails = {};
+      if (typeof details.name === 'string') {
+        const name = details.name.trim().slice(0, 100);
+        if (name) cleanDetails.name = name;
+      }
+      if (typeof details.description === 'string') {
+        cleanDetails.description = details.description.trim().slice(0, 300);
+      }
+      if (details.price === null) {
+        cleanDetails.price = null;
+      } else if (typeof details.price === 'number' && Number.isFinite(details.price) && details.price >= 0) {
+        cleanDetails.price = details.price;
+      }
+      if (typeof details.visible === 'boolean') cleanDetails.visible = details.visible;
+      if (Object.keys(cleanDetails).length) productDetails[id] = cleanDetails;
+    });
+  }
+
+  const productCategoryNames = new Set(allItems.map(item =>
     (productCategories[item.image] || item.category).toLocaleLowerCase('es')
   ));
   const customCategories = [];
@@ -378,7 +485,10 @@ function normalizeMenuSettings(record) {
       if (validIds.has(id) && !productOrder.includes(id)) productOrder.push(id);
     });
   }
-  return { id: menuSettingsId, productCategories, productOrder, customCategories };
+  const contentVersion = Number.isInteger(record?.contentVersion) && record.contentVersion > 0
+    ? record.contentVersion
+    : 0;
+  return { id: menuSettingsId, productCategories, productOrder, customCategories, productDetails, customProducts, contentVersion };
 }
 
 async function loadMenuSettings() {
@@ -390,19 +500,39 @@ async function loadMenuSettings() {
     request.onerror = () => reject(request.error || new Error('No se pudieron leer las categorías guardadas.'));
     transaction.onabort = () => reject(transaction.error || new Error('Se interrumpió la lectura de las categorías.'));
   });
-  if (record) menuSettings = normalizeMenuSettings(record);
+  if (record) {
+    menuSettings = normalizeMenuSettings(record);
+    if (!menuSettings.contentVersion) {
+      const productDetails = { ...menuSettings.productDetails };
+      productDetails['bocadillo-jamon-serrano.png'] = {
+        ...productDetails['bocadillo-jamon-serrano.png'],
+        name: 'Bocadillo de jamón de pata',
+        price: 5
+      };
+      productDetails['gofre.jpg'] = {
+        ...productDetails['gofre.jpg'],
+        price: 3.5
+      };
+      await saveMenuSettings({ productDetails, contentVersion: 1 });
+    }
+  }
 }
 
-async function saveMenuSettings(nextSettings) {
-  const database = await getImageDatabase();
-  const transaction = database.transaction(menuSettingsStoreName, 'readwrite');
-  transaction.objectStore(menuSettingsStoreName).put({ ...nextSettings, id: menuSettingsId });
-  await new Promise((resolve, reject) => {
-    transaction.oncomplete = resolve;
-    transaction.onerror = () => reject(transaction.error || new Error('No se pudieron guardar los cambios de la carta.'));
-    transaction.onabort = () => reject(transaction.error || new Error('Se interrumpió el guardado de la carta.'));
+async function saveMenuSettings(changes) {
+  const saveOperation = menuSettingsSaveQueue.then(async () => {
+    const nextSettings = { ...menuSettings, ...changes, id: menuSettingsId };
+    const database = await getImageDatabase();
+    const transaction = database.transaction(menuSettingsStoreName, 'readwrite');
+    transaction.objectStore(menuSettingsStoreName).put(nextSettings);
+    await new Promise((resolve, reject) => {
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error || new Error('No se pudieron guardar los cambios de la carta.'));
+      transaction.onabort = () => reject(transaction.error || new Error('Se interrumpió el guardado de la carta.'));
+    });
+    menuSettings = normalizeMenuSettings(nextSettings);
   });
-  menuSettings = normalizeMenuSettings(nextSettings);
+  menuSettingsSaveQueue = saveOperation.catch(() => {});
+  await saveOperation;
 }
 
 async function savePhotoEdit(id) {
@@ -434,6 +564,37 @@ function imageDataUrl(file) {
     reader.onerror = () => reject(reader.error || new Error('No se pudo leer la imagen.'));
     reader.readAsDataURL(file);
   });
+}
+
+async function prepareUploadedImage(file) {
+  const originalImage = await imageDataUrl(file);
+  const bitmap = await createImageBitmap(file);
+  try {
+    const longest = Math.max(bitmap.width, bitmap.height);
+    const shortest = Math.min(bitmap.width, bitmap.height);
+    let scale = shortest < 768 ? Math.min(3, 768 / shortest) : 1;
+    if (longest * scale > 3840) scale = 3840 / longest;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    const context = canvas.getContext('2d');
+    if (!context) throw new Error('No se pudo preparar la versión web de la fotografía.');
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = 'high';
+    context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const webBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.95));
+    if (!webBlob || webBlob.type !== 'image/webp') {
+      throw new Error('Este navegador no pudo crear una versión WebP de alta calidad.');
+    }
+    const webImage = await imageDataUrl(webBlob);
+    if (webImage.length > webImageDataLimit) {
+      throw new Error('La versión WebP supera el límite de almacenamiento de 20 MB.');
+    }
+    return { originalImage, webImage };
+  } finally {
+    bitmap.close();
+  }
 }
 
 function setEditorStatus(message, isError = false) {
@@ -475,6 +636,7 @@ function photoEditorCard(id, title, subtitle, productControls = '') {
 
 function renderProductPhotoEditor() {
   const categoriesForProducts = getMenuCategories();
+  document.getElementById('productCount').textContent = `${getAllMenuItems().length} productos`;
   if (editorCategoryFilter !== 'Todas' && !categoriesForProducts.includes(editorCategoryFilter)) {
     editorCategoryFilter = 'Todas';
   }
@@ -490,6 +652,14 @@ function renderProductPhotoEditor() {
   renameSelect.innerHTML = categoriesForProducts
     .map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`)
     .join('');
+  const addProductCategory = document.getElementById('newProductCategory');
+  const previousProductCategory = addProductCategory.value;
+  addProductCategory.innerHTML = categoriesForProducts
+    .map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`)
+    .join('');
+  addProductCategory.value = categoriesForProducts.includes(previousProductCategory)
+    ? previousProductCategory
+    : categoriesForProducts[0] || '';
 
   const items = getOrderedMenuItems().filter(item =>
     editorCategoryFilter === 'Todas' || getProductCategory(item) === editorCategoryFilter
@@ -502,28 +672,57 @@ function renderProductPhotoEditor() {
 
   document.getElementById('productPhotoEditor').innerHTML = items.map((item, index) => {
     const category = getProductCategory(item);
+    const name = getProductName(item);
+    const price = getProductPrice(item);
+    const visible = isProductVisible(item);
     const categoryOptions = categoriesForProducts.map(option =>
       `<option value="${escapeHtml(option)}"${option === category ? ' selected' : ''}>${escapeHtml(option)}</option>`
     ).join('');
     const controls = `
       <div class="editor-product-controls">
-        <label class="editor-select-label">
-          <span>Categoría del producto</span>
-          <select data-product-category="${escapeHtml(item.image)}"
-            aria-label="Cambiar categoría de ${escapeHtml(item.name)}">${categoryOptions}</select>
-        </label>
-        <div class="editor-order-actions" aria-label="Ordenar foto de ${escapeHtml(item.name)}">
+        <div class="editor-product-fields">
+          <label class="editor-select-label">
+            <span>Nombre del producto</span>
+            <input type="text" maxlength="100" value="${escapeHtml(name)}"
+              data-product-field="name" data-product-id="${escapeHtml(item.image)}">
+          </label>
+          <label class="editor-select-label editor-description-field">
+            <span>Descripción</span>
+            <textarea maxlength="300" rows="2" data-product-field="description"
+              data-product-id="${escapeHtml(item.image)}">${escapeHtml(getProductDescription(item))}</textarea>
+          </label>
+          <label class="editor-select-label">
+            <span>Precio</span>
+            <span class="editor-price-field">
+              <input type="number" min="0" step="0.01" inputmode="decimal"
+                value="${price === null ? '' : escapeHtml(price)}" placeholder="Sin precio"
+                data-product-field="price" data-product-id="${escapeHtml(item.image)}">
+              <span aria-hidden="true">€</span>
+            </span>
+          </label>
+          <label class="editor-select-label">
+            <span>Categoría del producto</span>
+            <select data-product-category="${escapeHtml(item.image)}">${categoryOptions}</select>
+          </label>
+          <label class="editor-visibility">
+            <input type="checkbox" data-product-visible="${escapeHtml(item.image)}"
+              ${visible ? ' checked' : ''}>
+            <span class="editor-visibility-label">Mostrar producto en la carta</span>
+            <span class="editor-visibility-state" data-visibility-state>${visible ? 'ON' : 'OFF'}</span>
+          </label>
+        </div>
+        <div class="editor-order-actions" aria-label="Ordenar ${escapeHtml(name)}">
           <button type="button" data-move-product="up" data-product-id="${escapeHtml(item.image)}"
-            aria-label="Subir ${escapeHtml(item.name)}"${index === 0 ? ' disabled' : ''}>↑</button>
+            aria-label="Subir ${escapeHtml(name)}"${index === 0 ? ' disabled' : ''}>↑</button>
           <button type="button" data-move-product="down" data-product-id="${escapeHtml(item.image)}"
-            aria-label="Bajar ${escapeHtml(item.name)}"${index === items.length - 1 ? ' disabled' : ''}>↓</button>
+            aria-label="Bajar ${escapeHtml(name)}"${index === items.length - 1 ? ' disabled' : ''}>↓</button>
         </div>
       </div>
     `;
     return photoEditorCard(
       item.image,
-      item.name,
-      `${category} · ${item.price === null ? 'Consultar' : euro.format(item.price)}`,
+      name,
+      `${category} · ${price === null ? 'Consultar' : euro.format(price)}`,
       controls
     );
   }).join('');
@@ -555,6 +754,7 @@ function renderMenuViews() {
 }
 
 async function renameMenuCategory() {
+  await Promise.all([productFieldSaveQueue, menuSettingsSaveQueue]);
   const categorySelect = document.getElementById('renameCategorySelect');
   const previousName = categorySelect.value;
   const newName = document.getElementById('renameCategoryInput').value.trim().slice(0, 40);
@@ -580,7 +780,7 @@ async function renameMenuCategory() {
     category === previousName ? newName : category
   );
   try {
-    await saveMenuSettings({ ...menuSettings, productCategories, customCategories });
+    await saveMenuSettings({ productCategories, customCategories });
     if (activeCategory === previousName) activeCategory = newName;
     if (editorCategoryFilter === previousName) editorCategoryFilter = newName;
     document.getElementById('renameCategoryInput').value = '';
@@ -592,6 +792,7 @@ async function renameMenuCategory() {
 }
 
 async function addMenuCategory() {
+  await Promise.all([productFieldSaveQueue, menuSettingsSaveQueue]);
   const input = document.getElementById('newCategoryInput');
   const newName = input.value.trim().slice(0, 40);
   if (!newName || newName.toLocaleLowerCase('es') === 'todas') {
@@ -604,7 +805,6 @@ async function addMenuCategory() {
   }
   try {
     await saveMenuSettings({
-      ...menuSettings,
       customCategories: [...menuSettings.customCategories, newName]
     });
     input.value = '';
@@ -615,8 +815,80 @@ async function addMenuCategory() {
   }
 }
 
+async function addMenuProduct() {
+  await Promise.all([productFieldSaveQueue, menuSettingsSaveQueue]);
+  const nameInput = document.getElementById('newProductName');
+  const descriptionInput = document.getElementById('newProductDescription');
+  const priceInput = document.getElementById('newProductPrice');
+  const categoryInput = document.getElementById('newProductCategory');
+  const imageInput = document.getElementById('newProductImage');
+  const name = nameInput.value.trim().slice(0, 100);
+  const category = categoryInput.value;
+  const file = imageInput.files[0];
+
+  if (!name) {
+    setEditorStatus('Escribe el nombre del producto que quieres añadir.', true);
+    nameInput.focus();
+    return;
+  }
+  if (!getMenuCategories().includes(category)) {
+    setEditorStatus('Selecciona una categoría válida para el producto.', true);
+    categoryInput.focus();
+    return;
+  }
+  if (!file || !file.type.startsWith('image/')) {
+    setEditorStatus('Elige una fotografía para el nuevo producto.', true);
+    imageInput.focus();
+    return;
+  }
+  if (file.size > 10 * 1024 * 1024) {
+    setEditorStatus('La imagen debe ocupar menos de 10 MB.', true);
+    return;
+  }
+  if (priceInput.value !== '' &&
+      (!priceInput.validity.valid || !Number.isFinite(priceInput.valueAsNumber) || priceInput.valueAsNumber < 0)) {
+    setEditorStatus('Introduce un precio válido con hasta dos decimales.', true);
+    priceInput.focus();
+    return;
+  }
+
+  try {
+    const uuid = typeof crypto.randomUUID === 'function'
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    const image = `custom-${uuid}`;
+    const { originalImage, webImage } = await prepareUploadedImage(file);
+    const product = {
+      image,
+      name,
+      category,
+      desc: descriptionInput.value.trim().slice(0, 300),
+      price: priceInput.value === '' ? null : priceInput.valueAsNumber,
+      originalImage,
+      webImage,
+      displayImage: '',
+      isCustom: true
+    };
+    const productOrder = [...getOrderedMenuItems().map(item => item.image), image];
+    await saveMenuSettings({
+      customProducts: [...menuSettings.customProducts, product],
+      productOrder
+    });
+    nameInput.value = '';
+    descriptionInput.value = '';
+    priceInput.value = '';
+    imageInput.value = '';
+    document.getElementById('addProductDetails').open = false;
+    renderMenuViews();
+    setEditorStatus(`«${name}» se añadió a la carta.`);
+  } catch (error) {
+    setEditorStatus(`No se pudo añadir el producto: ${error.message}`, true);
+  }
+}
+
 async function changeProductCategory(id, category) {
-  const item = menuItems.find(product => product.image === id);
+  await Promise.all([productFieldSaveQueue, menuSettingsSaveQueue]);
+  const item = getAllMenuItems().find(product => product.image === id);
   if (!item || !getMenuCategories().includes(category)) {
     setEditorStatus('No se pudo cambiar la categoría del producto.', true);
     renderPhotoEditor();
@@ -628,16 +900,84 @@ async function changeProductCategory(id, category) {
   else productCategories[id] = category;
 
   try {
-    await saveMenuSettings({ ...menuSettings, productCategories });
+    await saveMenuSettings({ productCategories });
     renderMenuViews();
-    setEditorStatus(`«${item.name}» ahora está en «${category}».`);
+    setEditorStatus(`«${getProductName(item)}» ahora está en «${category}».`);
   } catch (error) {
     setEditorStatus(`No se pudo mover el producto: ${error.message}`, true);
     renderPhotoEditor();
   }
 }
 
+async function saveProductField(input) {
+  const id = input.dataset.productId || input.dataset.productVisible;
+  const item = getAllMenuItems().find(product => product.image === id);
+  const field = input.dataset.productField || 'visible';
+  if (!item || !['name', 'description', 'price', 'visible'].includes(field)) {
+    setEditorStatus('No se pudo guardar el producto.', true);
+    return;
+  }
+
+  let value;
+  if (field === 'name') {
+    value = input.value.trim().slice(0, 100);
+    if (!value) {
+      setEditorStatus('El nombre del producto no puede estar vacío.', true);
+      input.focus();
+      return;
+    }
+  } else if (field === 'description') {
+    value = input.value.trim().slice(0, 300);
+  } else if (field === 'price') {
+    if (input.value === '') {
+      value = null;
+    } else if (!input.validity.valid || !Number.isFinite(input.valueAsNumber) || input.valueAsNumber < 0) {
+      setEditorStatus('Introduce un precio válido con hasta dos decimales.', true);
+      input.focus();
+      return;
+    } else {
+      value = input.valueAsNumber;
+    }
+  } else {
+    value = input.checked;
+  }
+
+  const saveOperation = productFieldSaveQueue.then(async () => {
+    const details = { ...getProductDetails(item), [field]: value };
+    const productDetails = { ...menuSettings.productDetails, [item.image]: details };
+    await saveMenuSettings({ productDetails });
+    renderFeaturedProducts();
+    renderCards();
+
+    const card = input.closest('.photo-editor-card');
+    const name = getProductName(item);
+    const price = getProductPrice(item);
+    if (card?.isConnected) {
+      card.querySelector('.editor-photo-heading h4').textContent = name;
+      card.querySelector('.editor-photo-heading p').textContent =
+        `${getProductCategory(item)} · ${price === null ? 'Consultar' : euro.format(price)}`;
+      card.querySelector('[data-delete-photo]').setAttribute('aria-label', `Eliminar foto de ${name}`);
+      card.querySelector('[data-restore-photo]').setAttribute('aria-label', `Restaurar foto de ${name}`);
+      card.querySelectorAll('[data-move-product]').forEach(button => {
+        button.setAttribute('aria-label', `${button.dataset.moveProduct === 'up' ? 'Subir' : 'Bajar'} ${name}`);
+      });
+      if (field === 'visible') {
+        card.querySelector('[data-visibility-state]').textContent = input.checked ? 'ON' : 'OFF';
+      }
+    }
+    setEditorStatus(`Cambios guardados para «${name}».`);
+  });
+  productFieldSaveQueue = saveOperation.catch(() => {});
+  try {
+    await saveOperation;
+  } catch (error) {
+    if (field === 'visible') input.checked = isProductVisible(item);
+    setEditorStatus(`No se pudo guardar el producto: ${error.message}`, true);
+  }
+}
+
 async function moveProductPhoto(id, direction) {
+  await Promise.all([productFieldSaveQueue, menuSettingsSaveQueue]);
   const visibleItems = getOrderedMenuItems().filter(item =>
     editorCategoryFilter === 'Todas' || getProductCategory(item) === editorCategoryFilter
   );
@@ -652,7 +992,7 @@ async function moveProductPhoto(id, direction) {
     [productOrder[targetOrderIndex], productOrder[currentOrderIndex]];
 
   try {
-    await saveMenuSettings({ ...menuSettings, productOrder });
+    await saveMenuSettings({ productOrder });
     renderCards();
     renderPhotoEditor();
     setEditorStatus('Orden de las fotos guardado.');
@@ -715,12 +1055,13 @@ async function handlePhotoUpload(input) {
   }
 
   try {
-    const edit = { ...getPhotoEdit(id), src: await imageDataUrl(file), removed: false };
+    const { originalImage, webImage } = await prepareUploadedImage(file);
+    const edit = { ...getPhotoEdit(id), src: webImage, originalSrc: originalImage, removed: false };
     photoEdits.set(id, edit);
     updatePhotoView(id);
     await savePhotoEdit(id);
     renderPhotoEditor();
-    setEditorStatus('Fotografía guardada. Puedes seguir ajustando el encuadre.');
+    setEditorStatus('Original conservado y versión web guardada. Puedes seguir ajustando el encuadre.');
   } catch (error) {
     setEditorStatus(`No se pudo guardar la fotografía: ${error.message}`, true);
   }
@@ -728,8 +1069,24 @@ async function handlePhotoUpload(input) {
 
 async function restorePhoto(id) {
   try {
-    await deletePhotoEdit(id);
-    photoEdits.delete(id);
+    const currentEdit = getPhotoEdit(id);
+    if (currentEdit.originalSrc) {
+      const spacePhoto = spacePhotos.find(photo => photo.id === id);
+      const restored = {
+        id,
+        src: '',
+        originalSrc: currentEdit.originalSrc,
+        removed: false,
+        zoom: 1,
+        x: spacePhoto ? spacePhoto.x : 50,
+        y: spacePhoto ? spacePhoto.y : 50
+      };
+      photoEdits.set(id, restored);
+      await savePhotoEdit(id);
+    } else {
+      await deletePhotoEdit(id);
+      photoEdits.delete(id);
+    }
     updatePhotoView(id);
     renderPhotoEditor();
     setEditorStatus('Fotografía original restaurada.');
@@ -787,7 +1144,7 @@ featuredGrid.addEventListener('click', event => {
   if (!link) return;
   resetMenuFilters();
   const productCard = [...menuGrid.querySelectorAll('.menu-card')]
-    .find(card => card.dataset.productName === link.dataset.featuredProduct);
+    .find(card => card.dataset.productId === link.dataset.featuredProduct);
   if (productCard) {
     const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
     window.setTimeout(() => productCard.scrollIntoView({ behavior, block: 'center' }), 0);
@@ -839,7 +1196,9 @@ photoEditor.addEventListener('input', event => {
   if (event.target.matches('input[type="range"][data-photo-field]')) updatePhotoEditorRange(event.target);
 });
 photoEditor.addEventListener('change', async event => {
-  if (event.target.id === 'productPhotoCategoryFilter') {
+  if (event.target.matches('input[data-product-field], textarea[data-product-field], input[data-product-visible]')) {
+    await saveProductField(event.target);
+  } else if (event.target.id === 'productPhotoCategoryFilter') {
     editorCategoryFilter = event.target.value;
     renderProductPhotoEditor();
   } else if (event.target.matches('select[data-product-category]')) {
@@ -856,6 +1215,10 @@ photoEditor.addEventListener('change', async event => {
   }
 });
 photoEditor.addEventListener('click', async event => {
+  if (event.target.closest('#createProductButton')) {
+    await addMenuProduct();
+    return;
+  }
   if (event.target.closest('#renameCategoryButton')) {
     await renameMenuCategory();
     return;

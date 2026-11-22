@@ -1,0 +1,106 @@
+﻿path,role,source_path,width_px,height_px,format,size_bytes,encoding,used_by
+assets/cover/source/hero-santa-ana.png,source (preserved),,1672,941,PNG,2835879,PNG; no lossy processing inferred,Fotografía de portada
+assets/cover/web/hero-santa-ana.webp,web derivative,assets/cover/source/hero-santa-ana.png,1672,941,WEBP,533734,"WebP lossy, quality 95; original preserved",Fotografía de portada
+assets/interior/comedor-barra.jpg,source (preserved),,1257,598,JPEG,130449,JPEG lossy; source quality unknown,Comedor · Barra
+assets/interior/comedor-mesas.jpg,source (preserved),,1261,606,JPEG,139283,JPEG lossy; source quality unknown,Comedor · Mesas
+assets/interior/comedor-pizarra.jpg,source (preserved),,666,883,JPEG,118310,JPEG lossy; source quality unknown,Comedor · Pizarra
+assets/interior/comedor-salon.jpg,source (preserved),,1253,600,JPEG,153416,JPEG lossy; source quality unknown,Comedor · Salón
+assets/interior/web/comedor-barra.webp,web derivative,assets/interior/comedor-barra.jpg,1614,768,WEBP,221578,"WebP lossy, quality 95; original preserved",Comedor · Barra
+assets/interior/web/comedor-mesas.webp,web derivative,assets/interior/comedor-mesas.jpg,1598,768,WEBP,231370,"WebP lossy, quality 95; original preserved",Comedor · Mesas
+assets/interior/web/comedor-pizarra.webp,web derivative,assets/interior/comedor-pizarra.jpg,768,1018,WEBP,175296,"WebP lossy, quality 95; original preserved",Comedor · Pizarra
+assets/interior/web/comedor-salon.webp,web derivative,assets/interior/comedor-salon.jpg,1604,768,WEBP,268980,"WebP lossy, quality 95; original preserved",Comedor · Salón
+assets/products/bocadillo-atun.jpg,source (preserved),,256,205,JPEG,20246,JPEG lossy; source quality unknown,Atún
+assets/products/bocadillo-beicon.jpg,source (preserved),,256,205,JPEG,20760,JPEG lossy; source quality unknown,Caliente de beicon
+assets/products/bocadillo-chistorra.jpg,source (preserved),,256,205,JPEG,23454,JPEG lossy; source quality unknown,Caliente de chistorra
+assets/products/bocadillo-jamon-serrano-collage.jpg,source (preserved),,256,204,JPEG,20178,JPEG lossy; source quality unknown,Not directly referenced by the current page
+assets/products/bocadillo-jamon-serrano.jpg,source (preserved),,1536,1024,PNG,2325493,PNG; no lossy processing inferred,Not directly referenced by the current page
+assets/products/bocadillo-jamon-serrano.png,source (preserved),,1536,1024,PNG,2325493,PNG; no lossy processing inferred,Bocadillo de jamón de pata
+assets/products/bocadillo-lomo-adobado.jpg,source (preserved),,256,205,JPEG,22373,JPEG lossy; source quality unknown,Caliente de lomo adobado
+assets/products/bocadillo-pavo.jpg,source (preserved),,256,205,JPEG,20839,JPEG lossy; source quality unknown,Pechuga de pavo
+assets/products/bocadillo-queso.jpg,source (preserved),,256,205,JPEG,18755,JPEG lossy; source quality unknown,Queso
+assets/products/bocadillo-tortilla-patatas.jpg,source (preserved),,256,205,JPEG,22147,JPEG lossy; source quality unknown,Caliente de tortilla de patatas
+assets/products/bocadillo-york.jpg,source (preserved),,256,204,JPEG,20767,JPEG lossy; source quality unknown,Jamón de York
+assets/products/cafe.jpg,source (preserved),,256,205,JPEG,17475,JPEG lossy; source quality unknown,Not directly referenced by the current page
+assets/products/cerveza.jpg,source (preserved),,256,205,JPEG,20247,JPEG lossy; source quality unknown,Not directly referenced by the current page
+assets/products/crepe.jpg,source (preserved),,256,204,JPEG,20426,JPEG lossy; source quality unknown,Crepe
+assets/products/croissant.jpg,source (preserved),,256,204,JPEG,21909,JPEG lossy; source quality unknown,Bollería casera
+assets/products/framed/bocadillo-atun.jpg,legacy crop (preserved),assets/products/bocadillo-atun.jpg,256,124,JPEG,13914,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-beicon.jpg,legacy crop (preserved),assets/products/bocadillo-beicon.jpg,256,124,JPEG,13684,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-chistorra.jpg,legacy crop (preserved),assets/products/bocadillo-chistorra.jpg,256,140,JPEG,16879,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-jamon-serrano.webp,legacy crop (preserved),assets/products/bocadillo-jamon-serrano.png,1280,853,WEBP,108496,WEBP; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-lomo-adobado.jpg,legacy crop (preserved),assets/products/bocadillo-lomo-adobado.jpg,256,124,JPEG,13872,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-pavo.jpg,legacy crop (preserved),assets/products/bocadillo-pavo.jpg,256,123,JPEG,13191,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-queso.jpg,legacy crop (preserved),assets/products/bocadillo-queso.jpg,256,123,JPEG,12123,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-tortilla-patatas.jpg,legacy crop (preserved),assets/products/bocadillo-tortilla-patatas.jpg,256,124,JPEG,12385,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/bocadillo-york.jpg,legacy crop (preserved),assets/products/bocadillo-york.jpg,256,136,JPEG,13842,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/crepe.jpg,legacy crop (preserved),assets/products/crepe.jpg,256,139,JPEG,15703,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/croissant.jpg,legacy crop (preserved),assets/products/croissant.jpg,256,137,JPEG,15284,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/gofre.jpg,legacy crop (preserved),assets/products/gofre.jpg,256,139,JPEG,17605,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/sandwich-mixto.jpg,legacy crop (preserved),assets/products/sandwich-mixto.jpg,256,141,JPEG,15632,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/sandwich-vegetal.jpg,legacy crop (preserved),assets/products/sandwich-vegetal.jpg,256,142,JPEG,16490,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-aceite-tomate.jpg,legacy crop (preserved),assets/products/tostada-aceite-tomate.jpg,256,159,JPEG,14723,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-atun-queso.jpg,legacy crop (preserved),assets/products/tostada-atun-queso.jpg,256,151,JPEG,14896,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-jamon-serrano-queso.jpg,legacy crop (preserved),assets/products/tostada-jamon-serrano-queso.jpg,256,149,JPEG,15527,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-mantequilla.jpg,legacy crop (preserved),assets/products/tostada-mantequilla.jpg,256,159,JPEG,13593,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-mermelada.jpg,legacy crop (preserved),assets/products/tostada-mermelada.jpg,256,159,JPEG,16288,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-pate-queso.jpg,legacy crop (preserved),assets/products/tostada-pate-queso.jpg,256,114,JPEG,11252,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-pate.jpg,legacy crop (preserved),assets/products/tostada-pate.jpg,256,160,JPEG,15213,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-pechuga-pavo-queso.jpg,legacy crop (preserved),assets/products/tostada-pechuga-pavo-queso.jpg,256,150,JPEG,13990,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-sobrasada-queso.jpg,legacy crop (preserved),assets/products/tostada-sobrasada-queso.jpg,256,134,JPEG,13774,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-sobrasada.jpg,legacy crop (preserved),assets/products/tostada-sobrasada.jpg,256,159,JPEG,15288,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/tostada-york-queso.jpg,legacy crop (preserved),assets/products/tostada-york-queso.jpg,256,136,JPEG,14370,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/framed/zumo-natural.jpg,legacy crop (preserved),assets/products/zumo-natural.jpg,256,142,JPEG,9725,JPEG; prior encoding quality unknown,Crop reference only; not used by public page
+assets/products/gofre.jpg,source (preserved),,256,204,JPEG,22209,JPEG lossy; source quality unknown,Gofre
+assets/products/refresco.jpg,source (preserved),,256,205,JPEG,17104,JPEG lossy; source quality unknown,Not directly referenced by the current page
+assets/products/sandwich-mixto.jpg,source (preserved),,256,205,JPEG,20969,JPEG lossy; source quality unknown,Sándwich mixto
+assets/products/sandwich-vegetal.jpg,source (preserved),,256,205,JPEG,22215,JPEG lossy; source quality unknown,Sándwich vegetal
+assets/products/tostada-aceite-tomate.jpg,source (preserved),,256,205,JPEG,19157,JPEG lossy; source quality unknown,Aceite y tomate
+assets/products/tostada-atun-queso.jpg,source (preserved),,256,205,JPEG,21230,JPEG lossy; source quality unknown,Gratinada de atún y queso
+assets/products/tostada-jamon-serrano-queso.jpg,source (preserved),,256,205,JPEG,22793,JPEG lossy; source quality unknown,Gratinada de jamón serrano y queso
+assets/products/tostada-jamon-serrano.jpg,source (preserved),,256,205,JPEG,20826,JPEG lossy; source quality unknown,Not directly referenced by the current page
+assets/products/tostada-mantequilla.jpg,source (preserved),,256,205,JPEG,17726,JPEG lossy; source quality unknown,Mantequilla
+assets/products/tostada-mermelada.jpg,source (preserved),,256,205,JPEG,20373,JPEG lossy; source quality unknown,Mantequilla y mermelada
+assets/products/tostada-pate-queso.jpg,source (preserved),,256,205,JPEG,20672,JPEG lossy; source quality unknown,Gratinada de paté y queso
+assets/products/tostada-pate.jpg,source (preserved),,256,205,JPEG,18631,JPEG lossy; source quality unknown,Paté
+assets/products/tostada-pechuga-pavo-queso.jpg,source (preserved),,256,205,JPEG,21545,JPEG lossy; source quality unknown,Gratinada de pechuga de pavo y queso
+assets/products/tostada-sobrasada-queso.jpg,source (preserved),,256,205,JPEG,22569,JPEG lossy; source quality unknown,Gratinada de sobrasada y queso
+assets/products/tostada-sobrasada.jpg,source (preserved),,256,205,JPEG,19368,JPEG lossy; source quality unknown,Sobrasada
+assets/products/tostada-york-queso.jpg,source (preserved),,256,205,JPEG,23213,JPEG lossy; source quality unknown,Gratinada de jamón de York y queso
+assets/products/web/bocadillo-atun.webp,web derivative,assets/products/bocadillo-atun.jpg,768,372,WEBP,52864,"WebP lossy, quality 95; original preserved",Atún (Bocadillos fríos)
+assets/products/web/bocadillo-beicon.webp,web derivative,assets/products/bocadillo-beicon.jpg,768,372,WEBP,51272,"WebP lossy, quality 95; original preserved",Caliente de beicon (Bocadillos calientes)
+assets/products/web/bocadillo-chistorra.webp,web derivative,assets/products/bocadillo-chistorra.jpg,768,420,WEBP,68798,"WebP lossy, quality 95; original preserved",Caliente de chistorra (Bocadillos calientes)
+assets/products/web/bocadillo-jamon-serrano-collage.webp,web derivative,assets/products/bocadillo-jamon-serrano-collage.jpg,768,612,WEBP,73098,"WebP lossy, quality 95; original preserved",Not used by the current page
+assets/products/web/bocadillo-jamon-serrano.webp,web derivative,assets/products/bocadillo-jamon-serrano.png,1536,1024,WEBP,349588,"WebP lossy, quality 95; original preserved",Bocadillo de jamón de pata (Bocadillos fríos)
+assets/products/web/bocadillo-lomo-adobado.webp,web derivative,assets/products/bocadillo-lomo-adobado.jpg,768,372,WEBP,53450,"WebP lossy, quality 95; original preserved",Caliente de lomo adobado (Bocadillos calientes)
+assets/products/web/bocadillo-pavo.webp,web derivative,assets/products/bocadillo-pavo.jpg,768,369,WEBP,49874,"WebP lossy, quality 95; original preserved",Pechuga de pavo (Bocadillos fríos)
+assets/products/web/bocadillo-queso.webp,web derivative,assets/products/bocadillo-queso.jpg,768,369,WEBP,46208,"WebP lossy, quality 95; original preserved",Queso (Bocadillos fríos)
+assets/products/web/bocadillo-tortilla-patatas.webp,web derivative,assets/products/bocadillo-tortilla-patatas.jpg,768,372,WEBP,45400,"WebP lossy, quality 95; original preserved",Caliente de tortilla de patatas (Bocadillos calientes)
+assets/products/web/bocadillo-york.webp,web derivative,assets/products/bocadillo-york.jpg,768,408,WEBP,50520,"WebP lossy, quality 95; original preserved",Jamón de York (Bocadillos fríos)
+assets/products/web/cafe.webp,web derivative,assets/products/cafe.jpg,768,615,WEBP,61654,"WebP lossy, quality 95; original preserved",Not used by the current page
+assets/products/web/cerveza.webp,web derivative,assets/products/cerveza.jpg,768,615,WEBP,79930,"WebP lossy, quality 95; original preserved",Not used by the current page
+assets/products/web/crepe.webp,web derivative,assets/products/crepe.jpg,768,417,WEBP,58718,"WebP lossy, quality 95; original preserved",Crepe (Dulces)
+assets/products/web/croissant.webp,web derivative,assets/products/croissant.jpg,768,411,WEBP,58418,"WebP lossy, quality 95; original preserved",Bollería casera (Dulces)
+assets/products/web/gofre.webp,web derivative,assets/products/gofre.jpg,768,417,WEBP,68474,"WebP lossy, quality 95; original preserved",Gofre (Dulces)
+assets/products/web/refresco.webp,web derivative,assets/products/refresco.jpg,768,615,WEBP,61686,"WebP lossy, quality 95; original preserved",Not used by the current page
+assets/products/web/sandwich-mixto.webp,web derivative,assets/products/sandwich-mixto.jpg,768,423,WEBP,60788,"WebP lossy, quality 95; original preserved",Sándwich mixto (Sándwiches)
+assets/products/web/sandwich-vegetal.webp,web derivative,assets/products/sandwich-vegetal.jpg,768,426,WEBP,65324,"WebP lossy, quality 95; original preserved",Sándwich vegetal (Sándwiches)
+assets/products/web/tostada-aceite-tomate.webp,web derivative,assets/products/tostada-aceite-tomate.jpg,768,477,WEBP,52024,"WebP lossy, quality 95; original preserved",Aceite y tomate (Tostadas)
+assets/products/web/tostada-atun-queso.webp,web derivative,assets/products/tostada-atun-queso.jpg,768,453,WEBP,51538,"WebP lossy, quality 95; original preserved",Gratinada de atún y queso (Tostadas)
+assets/products/web/tostada-jamon-serrano-queso.webp,web derivative,assets/products/tostada-jamon-serrano-queso.jpg,768,447,WEBP,54328,"WebP lossy, quality 95; original preserved",Gratinada de jamón serrano y queso (Tostadas)
+assets/products/web/tostada-jamon-serrano.webp,web derivative,assets/products/tostada-jamon-serrano.jpg,768,615,WEBP,75660,"WebP lossy, quality 95; original preserved",Not used by the current page
+assets/products/web/tostada-mantequilla.webp,web derivative,assets/products/tostada-mantequilla.jpg,768,477,WEBP,47658,"WebP lossy, quality 95; original preserved",Mantequilla (Tostadas)
+assets/products/web/tostada-mermelada.webp,web derivative,assets/products/tostada-mermelada.jpg,768,477,WEBP,61028,"WebP lossy, quality 95; original preserved",Mantequilla y mermelada (Tostadas)
+assets/products/web/tostada-pate-queso.webp,web derivative,assets/products/tostada-pate-queso.jpg,768,342,WEBP,38412,"WebP lossy, quality 95; original preserved",Gratinada de paté y queso (Tostadas)
+assets/products/web/tostada-pate.webp,web derivative,assets/products/tostada-pate.jpg,768,480,WEBP,56186,"WebP lossy, quality 95; original preserved",Paté (Tostadas)
+assets/products/web/tostada-pechuga-pavo-queso.webp,web derivative,assets/products/tostada-pechuga-pavo-queso.jpg,768,450,WEBP,48868,"WebP lossy, quality 95; original preserved",Gratinada de pechuga de pavo y queso (Tostadas)
+assets/products/web/tostada-sobrasada-queso.webp,web derivative,assets/products/tostada-sobrasada-queso.jpg,768,402,WEBP,48272,"WebP lossy, quality 95; original preserved",Gratinada de sobrasada y queso (Tostadas)
+assets/products/web/tostada-sobrasada.webp,web derivative,assets/products/tostada-sobrasada.jpg,768,477,WEBP,56322,"WebP lossy, quality 95; original preserved",Sobrasada (Tostadas)
+assets/products/web/tostada-york-queso.webp,web derivative,assets/products/tostada-york-queso.jpg,768,408,WEBP,50700,"WebP lossy, quality 95; original preserved",Gratinada de jamón de York y queso (Tostadas)
+assets/products/web/zumo-natural.webp,web derivative,assets/products/zumo-natural.jpg,768,426,WEBP,33208,"WebP lossy, quality 95; original preserved",Zumo natural (Bebidas)
+assets/products/zumo-natural.jpg,source (preserved),,256,204,JPEG,15809,JPEG lossy; source quality unknown,Zumo natural
+assets/terrace/terraza-mesas.jpg,source (preserved),,1488,716,JPEG,273687,JPEG lossy; source quality unknown,Terraza · Mesas
+assets/terrace/terraza-pizarra.jpg,source (preserved),,425,879,JPEG,104508,JPEG lossy; source quality unknown,Terraza · Pizarra
+assets/terrace/terraza-vista.jpg,source (preserved),,429,874,JPEG,113377,JPEG lossy; source quality unknown,Terraza · Vista general
+assets/terrace/web/terraza-mesas.webp,web derivative,assets/terrace/terraza-mesas.jpg,1596,768,WEBP,409574,"WebP lossy, quality 95; original preserved",Terraza · Mesas
+assets/terrace/web/terraza-pizarra.webp,web derivative,assets/terrace/terraza-pizarra.jpg,768,1588,WEBP,282796,"WebP lossy, quality 95; original preserved",Terraza · Pizarra
+assets/terrace/web/terraza-vista.webp,web derivative,assets/terrace/terraza-vista.jpg,768,1565,WEBP,331876,"WebP lossy, quality 95; original preserved",Terraza · Vista general

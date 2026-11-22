@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asociación Ambigú Santa Ana | Carta, platos y contacto</title>
   <meta name="description" content="Carta digital de la Asociación Ambigú Santa Ana en Linares: tostadas, bocadillos, sándwiches, dulces y bebidas." />
-  <meta name="theme-color" content="#202820" />
+  <meta name="theme-color" content="#111111" />
   <link rel="canonical" href="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
@@ -13,16 +13,16 @@
   <meta property="og:description" content="Carta digital de la Asociación Ambigú Santa Ana en Linares: tostadas, bocadillos, sándwiches, dulces y bebidas." />
   <meta property="og:url" content="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/" />
   <meta property="og:site_name" content="Asociación Ambigú Santa Ana" />
-  <meta property="og:image" content="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/assets/products/framed/bocadillo-jamon-serrano.webp" />
-  <meta property="og:image:alt" content="Bocadillo de jamón serrano de la carta" />
+  <meta property="og:image" content="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/assets/cover/web/hero-santa-ana.webp" />
+  <meta property="og:image:alt" content="Imagen de portada de la Asociación Ambigú Santa Ana" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/assets/products/framed/bocadillo-jamon-serrano.webp" />
+  <meta name="twitter:image" content="https://winniethepopper.github.io/asociacion-ambigu-santa-ana-web/assets/cover/web/hero-santa-ana.webp" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="preload" as="image" href="assets/products/framed/bocadillo-jamon-serrano.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/cover/web/hero-santa-ana.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=17" />
 </head>
 <body>
   <header class="topbar">
@@ -37,6 +37,7 @@
       <nav class="desktop-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#carta">Carta</a>
+        <a href="#espacio">Espacio</a>
         <a href="#ubicacion">Ubicación</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -46,6 +47,7 @@
     <div id="mobileNav" class="mobile-nav container">
       <a href="#inicio">Inicio</a>
       <a href="#carta">Carta</a>
+      <a href="#espacio">Espacio</a>
       <a href="#ubicacion">Ubicación</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -53,43 +55,30 @@
 
   <main id="inicio">
     <section class="hero">
-      <div id="heroPhoto" class="hero-photo" role="img" aria-label="Bocadillo de jamón serrano de la carta"></div>
+      <div id="heroPhoto" class="hero-photo" role="img" aria-label="Imagen de portada de la Asociación Ambigú Santa Ana"></div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="eyebrow">ASOCIACIÓN AMBIGÚ · LINARES</div>
-        <h1>Asociación<br><span>Ambigú Santa Ana</span></h1>
-        <p>Tostadas, bocadillos y opciones dulces.</p>
+        <div class="eyebrow">LINARES · JAÉN</div>
+        <h1 id="heroTitle">Asociación<br>Ambigú<br><span>Santa Ana</span></h1>
+        <p>Tostadas, bocadillos, sándwiches, dulces y bebidas.</p>
         <div class="hero-actions">
-          <a class="btn btn-light" href="#carta">Ver carta</a>
+          <a class="btn btn-light" href="#carta">Ver la carta ↓</a>
           <a class="btn btn-outline-light" href="#ubicacion">Cómo llegar</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="especialidades" class="section featured-section">
-      <div class="container">
-        <div class="featured-heading">
-          <div class="eyebrow dark">UNA SELECCIÓN</div>
-          <h2>Una selección de la carta</h2>
-          <p>Tostadas, bocadillos y opciones dulces de la carta.</p>
-        </div>
-        <div id="featuredGrid" class="featured-grid"></div>
-        <div class="feature-points">
-          <div><span>01</span><strong>Tostadas</strong><small>Tostadas y gratinadas.</small></div>
-          <div><span>02</span><strong>Bocadillos</strong><small>Opciones frías y calientes.</small></div>
-          <div><span>03</span><strong>Un dulce final</strong><small>Gofres, crepes y bollería.</small></div>
         </div>
       </div>
     </section>
 
     <section id="carta" class="section section-menu">
       <div class="container">
-        <div class="section-head">
+        <div class="menu-intro">
           <div>
-            <div class="eyebrow dark">TOSTADAS · BOCADILLOS · MÁS</div>
+            <div class="eyebrow dark">ASOCIACIÓN AMBIGÚ · LINARES</div>
             <h2>La carta</h2>
-            <p>Busca tu favorito o explora las opciones por categoría.</p>
+            <p>Para desayunar, compartir y disfrutar.</p>
           </div>
+        </div>
+        <div class="category-nav" id="categoryNav" role="group" aria-label="Categorías de la carta"></div>
+        <div class="menu-tools">
           <div class="search-box">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
               <circle cx="10.8" cy="10.8" r="6.8"></circle>
@@ -97,9 +86,15 @@
             </svg>
             <input id="searchInput" type="search" placeholder="Buscar en la carta…" aria-label="Buscar en la carta" />
           </div>
+          <span class="menu-tools-note">PRODUCTO · CATEGORÍA · PRECIO</span>
         </div>
-
-        <div id="categoryNav" class="category-nav" role="group" aria-label="Categorías de la carta"></div>
+        <section id="mostOurSection" class="most-our" aria-labelledby="mostOurTitle">
+          <div class="featured-heading">
+            <div class="eyebrow dark">LO MÁS NUESTRO</div>
+            <h3 id="mostOurTitle">Una selección de la carta</h3>
+          </div>
+          <div id="featuredGrid" class="featured-grid"></div>
+        </section>
         <div class="menu-toolbar">
           <span id="resultsCount" aria-live="polite"></span>
           <span>CARTA · ASOCIACIÓN AMBIGÚ SANTA ANA</span>
@@ -113,6 +108,24 @@
       </div>
     </section>
 
+    <section id="especialidades" class="section specialty-section" aria-labelledby="specialtyTitle">
+      <div class="container">
+        <div class="specialty-heading">
+          <div class="eyebrow dark">UNA SELECCIÓN DE LA CASA</div>
+          <h2 id="specialtyTitle">Nuestras especialidades</h2>
+          <p>Una mirada a algunos productos de la carta.</p>
+        </div>
+        <div id="specialtyGrid" class="specialty-grid"></div>
+      </div>
+    </section>
+
+    <section id="espacio" class="space-intro">
+      <div class="container">
+        <div class="eyebrow dark">ASOCIACIÓN AMBIGÚ · LINARES</div>
+        <h2>Más que una carta</h2>
+      </div>
+    </section>
+
     <section id="comedor" class="section interior-section">
       <div class="container">
         <div class="terrace-heading">
@@ -123,25 +136,25 @@
         <div class="terrace-gallery interior-gallery" aria-label="Fotos del comedor interior">
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: barra del comedor interior">
-              <img src="assets/interior/comedor-barra.jpg" alt="Vista del mostrador y el comedor interior" loading="lazy" data-photo-id="comedor-barra">
+              <img src="assets/interior/web/comedor-barra.webp" alt="Vista del mostrador y el comedor interior" loading="lazy" data-photo-id="comedor-barra">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: mesas del comedor">
-              <img src="assets/interior/comedor-mesas.jpg" alt="Mesas y sillas del comedor junto a la barra" loading="lazy" data-photo-id="comedor-mesas">
+              <img src="assets/interior/web/comedor-mesas.webp" alt="Mesas y sillas del comedor junto a la barra" loading="lazy" data-photo-id="comedor-mesas">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: salón comedor">
-              <img src="assets/interior/comedor-salon.jpg" alt="Mesas preparadas en el salón comedor" loading="lazy" data-photo-id="comedor-salon">
+              <img src="assets/interior/web/comedor-salon.webp" alt="Mesas preparadas en el salón comedor" loading="lazy" data-photo-id="comedor-salon">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: pizarra del comedor">
-              <img src="assets/interior/comedor-pizarra.jpg" alt="Pizarra con las opciones de bocadillos calientes" loading="lazy" data-photo-id="comedor-pizarra">
+              <img src="assets/interior/web/comedor-pizarra.webp" alt="Pizarra con las opciones de bocadillos calientes" loading="lazy" data-photo-id="comedor-pizarra">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
@@ -159,19 +172,19 @@
         <div class="terrace-gallery" aria-label="Fotos de la terraza de verano">
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: pizarra y mesas de la terraza">
-              <img src="assets/terrace/terraza-pizarra.jpg" alt="Pizarra y mesas de la terraza bajo un naranjo" loading="lazy" data-photo-id="terraza-pizarra">
+              <img src="assets/terrace/web/terraza-pizarra.webp" alt="Pizarra y mesas de la terraza bajo un naranjo" loading="lazy" data-photo-id="terraza-pizarra">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: mesas de la terraza de verano">
-              <img src="assets/terrace/terraza-mesas.jpg" alt="Mesas y sillas rojas en la terraza de verano" loading="lazy" data-photo-id="terraza-mesas">
+              <img src="assets/terrace/web/terraza-mesas.webp" alt="Mesas y sillas rojas en la terraza de verano" loading="lazy" data-photo-id="terraza-mesas">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
           <figure class="terrace-photo">
             <button class="photo-trigger" type="button" data-photo-trigger aria-label="Ampliar foto: vista de la terraza de verano">
-              <img src="assets/terrace/terraza-vista.jpg" alt="Vista general de la terraza exterior entre naranjos" loading="lazy" data-photo-id="terraza-vista">
+              <img src="assets/terrace/web/terraza-vista.webp" alt="Vista general de la terraza exterior entre naranjos" loading="lazy" data-photo-id="terraza-vista">
               <span class="photo-placeholder" hidden>Foto próximamente</span>
             </button>
           </figure>
@@ -182,8 +195,8 @@
     <section id="ubicacion" class="section location-section">
       <div class="container location-layout">
         <div class="location-copy">
-          <div class="eyebrow dark">ENCUÉNTRANOS</div>
-          <h2>Ven a visitarnos.</h2>
+          <div class="eyebrow dark">UBICACIÓN · LINARES</div>
+          <h2>Ven a vernos.</h2>
           <p>Estamos en Santa Ana, Linares. Consulta el mapa y encuentra cómo llegar.</p>
           <div class="location-address">
             <span class="info-label">DIRECCIÓN</span>
@@ -212,7 +225,7 @@
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">ASOCIACIÓN AMBIGÚ SANTA ANA</div>
-        <p>Tostadas, bocadillos y buenos momentos en Santa Ana, Linares.</p>
+        <p>LINARES · JAÉN</p>
         <div class="footer-contact">
           <span>Teléfono</span>
           <a href="tel:614866306">614 866 306</a>
@@ -221,9 +234,9 @@
       <div class="footer-links">
         <a href="#carta">Carta</a>
         <a href="#especialidades">Especialidades</a>
-        <a href="#terraza">Terraza</a>
-        <a href="#comedor">Comedor</a>
+        <a href="#espacio">Espacio</a>
         <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </div>
@@ -269,8 +282,8 @@
       </section>
       <section class="editor-section" aria-labelledby="productPhotosTitle">
         <div class="editor-section-heading">
-          <h3 id="productPhotosTitle">Fotos de la carta</h3>
-          <span>26 productos</span>
+          <h3 id="productPhotosTitle">Productos de la carta</h3>
+          <span id="productCount"></span>
         </div>
         <div class="menu-editor-controls">
           <label class="editor-select-label" for="productPhotoCategoryFilter">
@@ -300,7 +313,37 @@
               </div>
             </div>
           </details>
-          <p class="editor-help">Cambia la categoría de cada producto o usa las flechas para ordenar sus fotos.</p>
+          <details id="addProductDetails" class="product-adder">
+            <summary>Añadir producto con fotografía</summary>
+            <div class="product-adder-grid">
+              <label class="editor-select-label">
+                <span>Nombre del producto</span>
+                <input id="newProductName" type="text" maxlength="100" autocomplete="off">
+              </label>
+              <label class="editor-select-label editor-description-field">
+                <span>Descripción</span>
+                <textarea id="newProductDescription" maxlength="300" rows="2"></textarea>
+              </label>
+              <label class="editor-select-label">
+                <span>Precio (opcional)</span>
+                <span class="editor-price-field">
+                  <input id="newProductPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Sin precio">
+                  <span aria-hidden="true">€</span>
+                </span>
+              </label>
+              <label class="editor-select-label">
+                <span>Categoría</span>
+                <select id="newProductCategory"></select>
+              </label>
+              <label class="upload-photo product-adder-upload">
+                <span>Elegir fotografía</span>
+                <input id="newProductImage" type="file" accept="image/*">
+              </label>
+              <button id="createProductButton" class="editor-action-button" type="button">Añadir producto</button>
+            </div>
+            <p class="editor-help">El nuevo producto aparecerá en la carta y se guardará en este navegador; no se publica automáticamente para otros visitantes.</p>
+          </details>
+          <p class="editor-help">Edita sus datos, categoría y visibilidad; también puedes cambiar las fotos y ordenar los productos. Los cambios se guardan automáticamente.</p>
         </div>
         <div id="productPhotoEditor" class="editor-list"></div>
       </section>
@@ -318,6 +361,6 @@
     </div>
   </aside>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=14"></script>
 </body>
 </html>
