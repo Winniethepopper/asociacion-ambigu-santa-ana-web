@@ -27,9 +27,12 @@ const menuItems = [
   { name: 'Zumo natural', category: 'Bebidas', price: 2.5, desc: 'Zumo natural.', image: 'zumo-natural.jpg' }
 ].map(item => ({
   ...item,
-  displayImage: item.image === 'bocadillo-jamon-serrano.png' ? item.image : `framed/${item.image}?v=2`
+  displayImage: item.image === 'bocadillo-jamon-serrano.png'
+    ? 'framed/bocadillo-jamon-serrano.webp'
+    : `framed/${item.image}?v=2`
 }));
 
+const featuredProductNames = ['Jamón serrano', 'Gratinada de jamón serrano y queso', 'Gofre'];
 const spacePhotos = [
   { id: 'terraza-pizarra', title: 'Terraza · Pizarra', category: 'Terraza', src: 'assets/terrace/terraza-pizarra.jpg', x: 50, y: 61 },
   { id: 'terraza-mesas', title: 'Terraza · Mesas', category: 'Terraza', src: 'assets/terrace/terraza-mesas.jpg', x: 43, y: 50 },
@@ -41,6 +44,7 @@ const spacePhotos = [
 ];
 
 const menuGrid = document.getElementById('menuGrid');
+const featuredGrid = document.getElementById('featuredGrid');
 const categoryNav = document.getElementById('categoryNav');
 const emptyState = document.getElementById('emptyState');
 const searchInput = document.getElementById('searchInput');
@@ -53,7 +57,11 @@ const photoEditor = document.getElementById('photoEditor');
 const editorBackdrop = document.getElementById('editorBackdrop');
 const editorStatus = document.getElementById('editorStatus');
 const heroPhoto = document.getElementById('heroPhoto');
-const heroImage = 'assets/products/bocadillo-jamon-serrano.png';
+const heroImage = 'assets/products/framed/bocadillo-jamon-serrano.webp';
+const photoViewer = document.getElementById('photoViewer');
+const photoViewerImage = document.getElementById('photoViewerImage');
+const photoViewerCaption = document.getElementById('photoViewerCaption');
+const closePhotoViewer = document.getElementById('closePhotoViewer');
 const imageDatabaseName = 'santa-ana-photo-editor';
 const imageStoreName = 'photo-edits';
 
@@ -62,6 +70,7 @@ let imageDatabasePromise;
 let photoEdits = new Map();
 let editorStorageError = null;
 let scrollObserver;
+let lastPhotoTrigger = null;
 
 function observeScrollReveal(elements) {
   if (!scrollObserver) return;
@@ -82,7 +91,7 @@ function initializeScrollAnimations() {
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
-  observeScrollReveal(document.querySelectorAll('.hero-content, .section-head, .menu-toolbar, .menu-card, .feature-grid, .terrace-heading, .terrace-photo, .info-grid > div, .footer-grid, .footer-bottom'));
+  observeScrollReveal(document.querySelectorAll('.hero-content, .featured-heading, .featured-card, .section-head, .menu-toolbar, .menu-card, .terrace-heading, .terrace-photo, .location-layout, .footer-grid, .footer-bottom'));
 }
 
 function escapeHtml(value) {
@@ -102,8 +111,8 @@ function categories() {
 function renderCategories() {
   categoryNav.innerHTML = categories().map(category => `
     <button class="category-btn${category === activeCategory ? ' active' : ''}"
-      type="button" data-category="${escapeHtml(category)}" role="tab"
-      aria-selected="${category === activeCategory}">${escapeHtml(category)}</button>
+      type="button" data-category="${escapeHtml(category)}"
+      aria-pressed="${category === activeCategory}">${escapeHtml(category)}</button>
   `).join('');
 
   categoryNav.querySelectorAll('button').forEach(button => {
@@ -113,6 +122,31 @@ function renderCategories() {
       renderCards();
     });
   });
+}
+
+function renderFeaturedProducts() {
+  const items = featuredProductNames
+    .map(name => menuItems.find(item => item.name === name))
+    .filter(Boolean);
+
+  featuredGrid.innerHTML = items.map(item => `
+    <article class="featured-card">
+      <button class="featured-photo photo-trigger" type="button" data-photo-trigger
+        aria-label="Ampliar foto: ${escapeHtml(item.name)}">
+        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}"
+          loading="lazy" decoding="async" data-photo-id="${escapeHtml(item.image)}">
+        <span class="photo-placeholder" hidden>Foto próximamente</span>
+      </button>
+      <div class="featured-card-body">
+        <div class="card-meta">
+          <span class="card-category">${escapeHtml(item.category)}</span>
+          <span class="price">${item.price === null ? 'Consultar' : euro.format(item.price)}</span>
+        </div>
+        <h3>${escapeHtml(item.name)}</h3>
+        <a class="featured-card-link" href="#carta" data-featured-product="${escapeHtml(item.name)}">Ver en carta <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+  `).join('');
 }
 
 function filteredItems() {
@@ -130,10 +164,13 @@ function renderCards() {
   resultsCount.textContent = `${items.length} ${items.length === 1 ? 'opción' : 'opciones'}`;
   if (scrollObserver) menuGrid.querySelectorAll('.scroll-reveal').forEach(card => scrollObserver.unobserve(card));
   menuGrid.innerHTML = items.map(item => `
-    <article class="menu-card">
-      <div class="card-media">
-        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}" loading="lazy" data-photo-id="${escapeHtml(item.image)}">
-      </div>
+    <article class="menu-card" data-product-name="${escapeHtml(item.name)}">
+      <button class="card-media photo-trigger" type="button" data-photo-trigger
+        aria-label="Ampliar foto: ${escapeHtml(item.name)}">
+        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}"
+          loading="lazy" decoding="async" data-photo-id="${escapeHtml(item.image)}">
+        <span class="photo-placeholder" hidden>Foto próximamente</span>
+      </button>
       <div class="card-body">
         <div class="card-meta">
           <span class="card-category">${escapeHtml(item.category)}</span>
@@ -163,6 +200,23 @@ function getOriginalImage(id) {
   return spacePhoto ? spacePhoto.src : '';
 }
 
+function updatePhotoFallback(image) {
+  const placeholder = image.closest('.photo-trigger')?.querySelector('.photo-placeholder');
+  if (!placeholder || !image.complete) return;
+  const hasImage = image.naturalWidth > 0;
+  image.hidden = !hasImage;
+  placeholder.hidden = hasImage;
+}
+
+function bindPhotoFallback(image) {
+  if (!image.dataset.fallbackBound) {
+    image.dataset.fallbackBound = 'true';
+    image.addEventListener('load', () => updatePhotoFallback(image));
+    image.addEventListener('error', () => updatePhotoFallback(image));
+  }
+  updatePhotoFallback(image);
+}
+
 function updatePhotoView(id) {
   const edit = getPhotoEdit(id);
   const src = edit.src || getOriginalImage(id);
@@ -174,10 +228,13 @@ function updatePhotoView(id) {
   } else {
     document.querySelectorAll('img[data-photo-id]').forEach(image => {
       if (image.dataset.photoId !== id) return;
-      image.src = src;
       image.hidden = Boolean(edit.removed);
-      const container = image.closest('.card-media, .terrace-photo, .feature-photo');
+      const container = image.closest('.card-media, .terrace-photo, .featured-photo, .feature-photo');
       if (container) container.hidden = Boolean(edit.removed);
+      if (!edit.removed) {
+        if (image.getAttribute('src') !== src) image.src = src;
+        if (container) bindPhotoFallback(image);
+      }
       image.style.objectPosition = `${edit.x}% ${edit.y}%`;
       image.style.transform = `scale(${edit.zoom})`;
     });
@@ -185,7 +242,7 @@ function updatePhotoView(id) {
 
   document.querySelectorAll('img[data-preview-photo]').forEach(image => {
     if (image.dataset.previewPhoto !== id) return;
-    image.src = src;
+    if (image.getAttribute('src') !== src) image.src = src;
     image.hidden = Boolean(edit.removed);
     image.closest('.editor-photo-preview').classList.toggle('empty', Boolean(edit.removed));
     image.style.objectPosition = `${edit.x}% ${edit.y}%`;
@@ -419,17 +476,58 @@ async function removePhoto(id) {
   }
 }
 
-searchInput.addEventListener('input', renderCards);
-menuBtn.addEventListener('click', () => {
-  const isOpen = mobileNav.classList.toggle('open');
+function openPhotoViewer(trigger) {
+  const image = trigger.querySelector('img[data-photo-id]');
+  if (!image || image.hidden) return;
+  lastPhotoTrigger = trigger;
+  photoViewerImage.src = image.currentSrc || image.src;
+  photoViewerImage.alt = image.alt;
+  photoViewerCaption.textContent = image.alt || trigger.getAttribute('aria-label') || 'Fotografía';
+  photoViewer.showModal();
+  closePhotoViewer.focus();
+}
+
+function setMobileMenuOpen(isOpen) {
+  mobileNav.classList.toggle('open', isOpen);
   menuBtn.setAttribute('aria-expanded', String(isOpen));
   menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  menuBtn.textContent = isOpen ? '×' : '☰';
+}
+
+searchInput.addEventListener('input', renderCards);
+menuBtn.addEventListener('click', () => {
+  setMobileMenuOpen(!mobileNav.classList.contains('open'));
 });
 mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  mobileNav.classList.remove('open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  menuBtn.setAttribute('aria-label', 'Abrir menú');
+  setMobileMenuOpen(false);
 }));
+featuredGrid.addEventListener('click', event => {
+  const link = event.target.closest('[data-featured-product]');
+  if (!link) return;
+  searchInput.value = '';
+  activeCategory = 'Todas';
+  renderCategories();
+  renderCards();
+  const productCard = [...menuGrid.querySelectorAll('.menu-card')]
+    .find(card => card.dataset.productName === link.dataset.featuredProduct);
+  if (productCard) {
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    window.setTimeout(() => productCard.scrollIntoView({ behavior, block: 'center' }), 0);
+  }
+});
+document.addEventListener('click', event => {
+  const trigger = event.target.closest('[data-photo-trigger]');
+  if (trigger) openPhotoViewer(trigger);
+});
+closePhotoViewer.addEventListener('click', () => photoViewer.close());
+photoViewer.addEventListener('click', event => {
+  if (event.target === photoViewer) photoViewer.close();
+});
+photoViewer.addEventListener('close', () => {
+  photoViewerImage.removeAttribute('src');
+  if (lastPhotoTrigger && lastPhotoTrigger.isConnected && !lastPhotoTrigger.closest('[hidden]')) lastPhotoTrigger.focus();
+  lastPhotoTrigger = null;
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 
 settingsButton.addEventListener('click', showPhotoEditor);
@@ -437,7 +535,13 @@ document.getElementById('closeEditor').addEventListener('click', () => hidePhoto
 document.getElementById('closeEditorFooter').addEventListener('click', () => hidePhotoEditor());
 editorBackdrop.addEventListener('click', () => hidePhotoEditor());
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && photoEditor.classList.contains('open')) hidePhotoEditor();
+  if (event.key !== 'Escape') return;
+  if (photoEditor.classList.contains('open')) {
+    hidePhotoEditor();
+  } else if (mobileNav.classList.contains('open')) {
+    setMobileMenuOpen(false);
+    menuBtn.focus();
+  }
 });
 photoEditor.addEventListener('keydown', event => {
   if (event.key !== 'Tab') return;
@@ -479,9 +583,11 @@ photoEditor.addEventListener('click', async event => {
 });
 
 renderCategories();
+renderFeaturedProducts();
 renderCards();
 renderPhotoEditor();
 initializeScrollAnimations();
+document.querySelectorAll('.photo-trigger img[data-photo-id]').forEach(bindPhotoFallback);
 loadPhotoEdits()
   .then(() => {
     applyPhotoEdits();

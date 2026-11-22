@@ -1,18 +1,21 @@
-# Asociación Ambigu Santa Ana — Carta digital
+# Asociación Ambigú Santa Ana — Carta digital
 
-Carta digital estática y adaptable a móvil, con una propuesta visual monocroma. No necesita instalar dependencias.
+Carta digital estática y adaptable a móvil, con una identidad visual propia en tonos cálidos. No necesita instalar dependencias.
 
 ## Archivos
 
 - `index.html`: contenido y estructura.
-- `styles.css`: diseño responsive.
-- `script.js`: productos, búsqueda y filtros por categoría.
+- `styles.css`: diseño responsive, tarjetas de producto y galerías.
+- `script.js`: datos de productos, especialidades, búsqueda, filtros y editor local de fotos.
 - `assets/products/`: fotografías de los productos.
-- `assets/products/framed/`: versiones recortadas para que las tarjetas no muestren los rótulos ni fragmentos de otras fotos. Los archivos originales se conservan en `assets/products/`.
+- `assets/products/framed/`: versiones recortadas para que las tarjetas no muestren los rótulos ni fragmentos de otras fotos. También contiene una versión WebP optimizada del bocadillo de jamón serrano para la portada y sus tarjetas. Los archivos originales se conservan en `assets/products/`.
+- `assets/favicon.svg`: icono vectorial de la asociación.
 
 ## Actualizar la carta
 
-Edita el array `menuItems` de `script.js` para cambiar nombres, categorías, precios o descripciones. Para reemplazar fotos fácilmente, usa la tuerca de la página; si las cambias manualmente, actualiza el archivo de `displayImage` en `assets/products/framed/`.
+Edita el array `menuItems` de `script.js` para cambiar nombres, categorías, precios o descripciones. Las tarjetas destacadas se eligen por nombre desde los mismos datos, sin duplicar precios. Para reemplazar fotos fácilmente, usa la tuerca de la página; si las cambias manualmente, actualiza la ruta de `image` y el archivo correspondiente de `assets/products/framed/`.
+
+Las imágenes de productos se pueden ampliar al pulsarlas. Si una foto de producto falta o no carga, su tarjeta muestra el aviso «Foto próximamente» en lugar de una imagen rota. Las categorías se generan desde las categorías existentes en `menuItems`.
 
 El precio de la bollería casera aparece como «Consultar», ya que no se pudo leer en la carta original.
 
