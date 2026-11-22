@@ -25,7 +25,10 @@ const menuItems = [
   { name: 'Crepe', category: 'Dulces', price: 3, desc: 'Crepe.', image: 'crepe.jpg' },
   { name: 'Bollería casera', category: 'Dulces', price: null, desc: 'Pregunta por la variedad y el precio del día.', image: 'croissant.jpg' },
   { name: 'Zumo natural', category: 'Bebidas', price: 2.5, desc: 'Zumo natural.', image: 'zumo-natural.jpg' }
-];
+].map(item => ({
+  ...item,
+  displayImage: item.image === 'bocadillo-jamon-serrano.png' ? item.image : `framed/${item.image}`
+}));
 
 const menuGrid = document.getElementById('menuGrid');
 const categoryNav = document.getElementById('categoryNav');
@@ -95,7 +98,7 @@ function renderCards() {
   menuGrid.innerHTML = items.map(item => `
     <article class="menu-card">
       <div class="card-media">
-        <img src="assets/products/${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" data-photo-id="${escapeHtml(item.image)}">
+        <img src="assets/products/${escapeHtml(item.displayImage)}" alt="${escapeHtml(item.name)}" loading="lazy" data-photo-id="${escapeHtml(item.image)}">
       </div>
       <div class="card-body">
         <div class="card-meta">
@@ -117,7 +120,7 @@ function getPhotoEdit(id) {
 function getOriginalImage(id) {
   if (id === 'hero') return heroImage;
   const item = menuItems.find(product => product.image === id);
-  return item ? `assets/products/${item.image}` : '';
+  return item ? `assets/products/${item.displayImage}` : '';
 }
 
 function updatePhotoView(id) {

@@ -8,10 +8,11 @@ Carta digital estática y adaptable a móvil, con una propuesta visual monocroma
 - `styles.css`: diseño responsive.
 - `script.js`: productos, búsqueda y filtros por categoría.
 - `assets/products/`: fotografías de los productos.
+- `assets/products/framed/`: versiones recortadas para que las tarjetas no muestren los rótulos ni fragmentos de otras fotos. Los archivos originales se conservan en `assets/products/`.
 
 ## Actualizar la carta
 
-Edita el array `menuItems` de `script.js`. Cada producto incluye nombre, categoría, precio, descripción y nombre del archivo de foto. Para cambiar una fotografía, sustituye el archivo correspondiente dentro de `assets/products/`.
+Edita el array `menuItems` de `script.js` para cambiar nombres, categorías, precios o descripciones. Para reemplazar fotos fácilmente, usa la tuerca de la página; si las cambias manualmente, actualiza el archivo de `displayImage` en `assets/products/framed/`.
 
 El precio de la bollería casera aparece como «Consultar», ya que no se pudo leer en la carta original.
 
