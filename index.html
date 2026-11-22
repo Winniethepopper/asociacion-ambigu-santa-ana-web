@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <header class="topbar">
@@ -24,6 +24,7 @@
         <a href="#carta">Carta</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#terraza">Terraza</a>
+        <a href="#comedor">Comedor</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button id="settingsButton" class="settings-button" type="button" aria-label="Editar fotografías" aria-controls="photoEditor" aria-expanded="false" title="Editar fotografías">⚙</button>
@@ -33,6 +34,7 @@
       <a href="#carta">Carta</a>
       <a href="#especialidades">Especialidades</a>
       <a href="#terraza">Terraza</a>
+      <a href="#comedor">Comedor</a>
       <a href="#contacto">Contacto</a>
     </div>
   </header>
@@ -104,14 +106,38 @@
           <p>Nuestra zona exterior, a la sombra de los naranjos, para disfrutar de Santa Ana.</p>
         </div>
         <div class="terrace-gallery" aria-label="Fotos de la terraza de verano">
-          <figure class="terrace-photo terrace-photo-sign">
-            <img src="assets/terrace/terraza-pizarra.jpg" alt="Pizarra y mesas de la terraza bajo un naranjo" loading="lazy">
+          <figure class="terrace-photo">
+            <img src="assets/terrace/terraza-pizarra.jpg" alt="Pizarra y mesas de la terraza bajo un naranjo" loading="lazy" data-photo-id="terraza-pizarra">
           </figure>
-          <figure class="terrace-photo terrace-photo-tables">
-            <img src="assets/terrace/terraza-mesas.jpg" alt="Mesas y sillas rojas en la terraza de verano" loading="lazy">
+          <figure class="terrace-photo">
+            <img src="assets/terrace/terraza-mesas.jpg" alt="Mesas y sillas rojas en la terraza de verano" loading="lazy" data-photo-id="terraza-mesas">
           </figure>
-          <figure class="terrace-photo terrace-photo-view">
-            <img src="assets/terrace/terraza-vista.jpg" alt="Vista general de la terraza exterior entre naranjos" loading="lazy">
+          <figure class="terrace-photo">
+            <img src="assets/terrace/terraza-vista.jpg" alt="Vista general de la terraza exterior entre naranjos" loading="lazy" data-photo-id="terraza-vista">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="comedor" class="section interior-section">
+      <div class="container">
+        <div class="terrace-heading">
+          <div class="eyebrow dark">ESPACIO INTERIOR</div>
+          <h2>El comedor</h2>
+          <p>Un espacio para sentarse, compartir y disfrutar de la carta en Santa Ana.</p>
+        </div>
+        <div class="terrace-gallery interior-gallery" aria-label="Fotos del comedor interior">
+          <figure class="terrace-photo">
+            <img src="assets/interior/comedor-barra.jpg" alt="Vista del mostrador y el comedor interior" loading="lazy" data-photo-id="comedor-barra">
+          </figure>
+          <figure class="terrace-photo">
+            <img src="assets/interior/comedor-mesas.jpg" alt="Mesas y sillas del comedor junto a la barra" loading="lazy" data-photo-id="comedor-mesas">
+          </figure>
+          <figure class="terrace-photo">
+            <img src="assets/interior/comedor-salon.jpg" alt="Mesas preparadas en el salón comedor" loading="lazy" data-photo-id="comedor-salon">
+          </figure>
+          <figure class="terrace-photo">
+            <img src="assets/interior/comedor-pizarra.jpg" alt="Pizarra con las opciones de bocadillos calientes" loading="lazy" data-photo-id="comedor-pizarra">
           </figure>
         </div>
       </div>
@@ -136,6 +162,7 @@
         <a href="#carta">Carta</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#terraza">Terraza</a>
+        <a href="#comedor">Comedor</a>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </div>
@@ -165,6 +192,13 @@
         </div>
         <div id="productPhotoEditor" class="editor-list"></div>
       </section>
+      <section class="editor-section" aria-labelledby="spacePhotosTitle">
+        <div class="editor-section-heading">
+          <h3 id="spacePhotosTitle">Fotos de los espacios</h3>
+          <span>Terraza y comedor</span>
+        </div>
+        <div id="spacePhotoEditor" class="editor-list"></div>
+      </section>
     </div>
     <div class="editor-footer">
       <span>Las fotos originales se mantienen para poder restaurarlas.</span>
@@ -172,6 +206,6 @@
     </div>
   </aside>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

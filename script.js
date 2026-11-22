@@ -30,6 +30,16 @@ const menuItems = [
   displayImage: item.image === 'bocadillo-jamon-serrano.png' ? item.image : `framed/${item.image}?v=2`
 }));
 
+const spacePhotos = [
+  { id: 'terraza-pizarra', title: 'Terraza · Pizarra', category: 'Terraza', src: 'assets/terrace/terraza-pizarra.jpg', x: 50, y: 61 },
+  { id: 'terraza-mesas', title: 'Terraza · Mesas', category: 'Terraza', src: 'assets/terrace/terraza-mesas.jpg', x: 43, y: 50 },
+  { id: 'terraza-vista', title: 'Terraza · Vista general', category: 'Terraza', src: 'assets/terrace/terraza-vista.jpg', x: 50, y: 63 },
+  { id: 'comedor-barra', title: 'Comedor · Barra', category: 'Comedor', src: 'assets/interior/comedor-barra.jpg', x: 50, y: 50 },
+  { id: 'comedor-mesas', title: 'Comedor · Mesas', category: 'Comedor', src: 'assets/interior/comedor-mesas.jpg', x: 50, y: 50 },
+  { id: 'comedor-salon', title: 'Comedor · Salón', category: 'Comedor', src: 'assets/interior/comedor-salon.jpg', x: 50, y: 50 },
+  { id: 'comedor-pizarra', title: 'Comedor · Pizarra', category: 'Comedor', src: 'assets/interior/comedor-pizarra.jpg', x: 50, y: 25 }
+];
+
 const menuGrid = document.getElementById('menuGrid');
 const categoryNav = document.getElementById('categoryNav');
 const emptyState = document.getElementById('emptyState');
@@ -114,13 +124,18 @@ function renderCards() {
 }
 
 function getPhotoEdit(id) {
-  return photoEdits.get(id) || { id, src: '', zoom: 1, x: 50, y: 50 };
+  const savedEdit = photoEdits.get(id);
+  if (savedEdit) return savedEdit;
+  const spacePhoto = spacePhotos.find(photo => photo.id === id);
+  return { id, src: '', zoom: 1, x: spacePhoto ? spacePhoto.x : 50, y: spacePhoto ? spacePhoto.y : 50 };
 }
 
 function getOriginalImage(id) {
   if (id === 'hero') return heroImage;
   const item = menuItems.find(product => product.image === id);
-  return item ? `assets/products/${item.displayImage}` : '';
+  if (item) return `assets/products/${item.displayImage}`;
+  const spacePhoto = spacePhotos.find(photo => photo.id === id);
+  return spacePhoto ? spacePhoto.src : '';
 }
 
 function updatePhotoView(id) {
@@ -151,6 +166,7 @@ function updatePhotoView(id) {
 function applyPhotoEdits() {
   updatePhotoView('hero');
   menuItems.forEach(item => updatePhotoView(item.image));
+  spacePhotos.forEach(photo => updatePhotoView(photo.id));
 }
 
 function openImageDatabase() {
@@ -273,6 +289,9 @@ function renderPhotoEditor() {
   document.getElementById('heroPhotoEditor').innerHTML = photoEditorCard('hero', 'Portada', 'Imagen principal de la página.');
   document.getElementById('productPhotoEditor').innerHTML = menuItems.map(item =>
     photoEditorCard(item.image, item.name, `${item.category} · ${item.price === null ? 'Consultar' : euro.format(item.price)}`)
+  ).join('');
+  document.getElementById('spacePhotoEditor').innerHTML = spacePhotos.map(photo =>
+    photoEditorCard(photo.id, photo.title, photo.category)
   ).join('');
 }
 
