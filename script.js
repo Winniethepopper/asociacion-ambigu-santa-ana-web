@@ -218,6 +218,14 @@ function renderCards() {
   applyPhotoEdits();
 }
 
+function resetMenuFilters() {
+  if (activeCategory === 'Todas' && !searchInput.value) return;
+  activeCategory = 'Todas';
+  searchInput.value = '';
+  renderCategories();
+  renderCards();
+}
+
 function getPhotoEdit(id) {
   const savedEdit = photoEdits.get(id);
   if (savedEdit) return savedEdit;
@@ -762,6 +770,12 @@ function setMobileMenuOpen(isOpen) {
 }
 
 searchInput.addEventListener('input', renderCards);
+document.querySelectorAll('a[href="#carta"]').forEach(link => {
+  if (!link.matches('[data-featured-product]')) link.addEventListener('click', resetMenuFilters);
+});
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#carta') resetMenuFilters();
+});
 menuBtn.addEventListener('click', () => {
   setMobileMenuOpen(!mobileNav.classList.contains('open'));
 });
@@ -771,10 +785,7 @@ mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', (
 featuredGrid.addEventListener('click', event => {
   const link = event.target.closest('[data-featured-product]');
   if (!link) return;
-  searchInput.value = '';
-  activeCategory = 'Todas';
-  renderCategories();
-  renderCards();
+  resetMenuFilters();
   const productCard = [...menuGrid.querySelectorAll('.menu-card')]
     .find(card => card.dataset.productName === link.dataset.featuredProduct);
   if (productCard) {
@@ -866,6 +877,11 @@ photoEditor.addEventListener('click', async event => {
   const button = event.target.closest('[data-restore-photo]');
   if (button) await restorePhoto(button.dataset.restorePhoto);
 });
+
+if (window.location.hash === '#carta') {
+  activeCategory = 'Todas';
+  searchInput.value = '';
+}
 
 renderCategories();
 renderFeaturedProducts();
