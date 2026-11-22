@@ -194,12 +194,17 @@ button { -webkit-tap-highlight-color: transparent; }
 .editor-section-heading span { color: var(--muted); font-size: 10px; }
 .editor-list { display: grid; gap: 10px; }
 .photo-editor-card { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 15px; padding: 11px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-.editor-photo-preview { min-height: 122px; overflow: hidden; border-radius: 5px; background: var(--soft); }
+.editor-photo-preview { min-height: 122px; display: grid; place-items: center; overflow: hidden; border-radius: 5px; background: var(--soft); }
+.editor-photo-preview.empty::after { content: "Sin foto"; color: var(--muted); font-size: 11px; font-weight: 600; }
 .editor-photo-preview img { width: 100%; height: 100%; min-height: 122px; display: block; object-fit: cover; transition: transform .15s, object-position .15s; }
 .editor-photo-details { min-width: 0; }
 .editor-photo-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
 .editor-photo-heading h4 { margin: 1px 0 3px; font-size: 12px; line-height: 1.3; }
 .editor-photo-heading p { margin: 0; color: var(--muted); font-size: 10px; }
+.editor-photo-actions { display: flex; align-items: center; gap: 6px; }
+.delete-photo { padding: 5px 8px; border: 1px solid #efcecc; border-radius: 4px; background: #fff; color: #a62924; font-size: 9px; font-weight: 700; cursor: pointer; }
+.delete-photo:hover { border-color: #a62924; background: #fff5f4; }
+.delete-photo:disabled { opacity: .5; cursor: default; }
 .restore-photo { padding: 5px 8px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--muted); font-size: 9px; font-weight: 700; cursor: pointer; }
 .restore-photo:hover { border-color: var(--ink); color: var(--ink); }
 .upload-photo { position: relative; display: inline-flex; min-height: 30px; align-items: center; justify-content: center; margin: 9px 0 7px; padding: 0 11px; border-radius: 4px; background: var(--ink); color: #fff; font-size: 10px; font-weight: 700; cursor: pointer; }
@@ -214,7 +219,7 @@ button { -webkit-tap-highlight-color: transparent; }
 .editor-footer span { color: var(--muted); font-size: 10px; line-height: 1.4; }
 .editor-done { flex: 0 0 auto; min-height: 38px; padding: 0 18px; border: 0; border-radius: 4px; background: var(--ink); color: #fff; font-size: 10px; font-weight: 700; cursor: pointer; }
 .editor-done:hover { background: #383a3c; }
-.settings-button:focus-visible, .editor-close:focus-visible, .editor-done:focus-visible, .restore-photo:focus-visible, .upload-photo:focus-within { outline: 3px solid #8a8d90; outline-offset: 3px; }
+.settings-button:focus-visible, .editor-close:focus-visible, .editor-done:focus-visible, .delete-photo:focus-visible, .restore-photo:focus-visible, .upload-photo:focus-within { outline: 3px solid #8a8d90; outline-offset: 3px; }
 
 @media (max-width: 900px) {
   .desktop-nav { display: none; }

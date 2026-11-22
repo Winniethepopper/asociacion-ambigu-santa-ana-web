@@ -18,7 +18,7 @@ El precio de la bollería casera aparece como «Consultar», ya que no se pudo l
 
 ## Editar fotos desde la página
 
-Pulsa la tuerca del encabezado para abrir el editor. Puedes cambiar la foto de portada o la de cualquiera de los 26 productos, ajustar zoom y encuadre con los controles y restaurar la imagen original. Las fotos y ajustes se guardan automáticamente en el almacenamiento local de ese navegador. No se sincronizan con otros dispositivos ni modifican los archivos publicados.
+Pulsa la tuerca del encabezado para abrir el editor. Puedes cambiar la portada, las fotos de los 26 productos y las de la terraza y el comedor; ajustar zoom y encuadre; eliminar una imagen de la vista, restaurarla o sustituirla por otra. Las fotos y ajustes se guardan automáticamente en el almacenamiento local de ese navegador. No se sincronizan con otros dispositivos ni modifican los archivos publicados.
 
 ## Vista previa
 

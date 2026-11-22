@@ -152,7 +152,7 @@ function getPhotoEdit(id) {
   const savedEdit = photoEdits.get(id);
   if (savedEdit) return savedEdit;
   const spacePhoto = spacePhotos.find(photo => photo.id === id);
-  return { id, src: '', zoom: 1, x: spacePhoto ? spacePhoto.x : 50, y: spacePhoto ? spacePhoto.y : 50 };
+  return { id, src: '', removed: false, zoom: 1, x: spacePhoto ? spacePhoto.x : 50, y: spacePhoto ? spacePhoto.y : 50 };
 }
 
 function getOriginalImage(id) {
@@ -168,13 +168,16 @@ function updatePhotoView(id) {
   const src = edit.src || getOriginalImage(id);
 
   if (id === 'hero') {
-    heroPhoto.style.backgroundImage = `url("${src}")`;
+    heroPhoto.style.backgroundImage = edit.removed ? 'none' : `url("${src}")`;
     heroPhoto.style.backgroundPosition = `${edit.x}% ${edit.y}%`;
     heroPhoto.style.transform = `scale(${edit.zoom})`;
   } else {
     document.querySelectorAll('img[data-photo-id]').forEach(image => {
       if (image.dataset.photoId !== id) return;
       image.src = src;
+      image.hidden = Boolean(edit.removed);
+      const container = image.closest('.card-media, .terrace-photo, .feature-photo');
+      if (container) container.hidden = Boolean(edit.removed);
       image.style.objectPosition = `${edit.x}% ${edit.y}%`;
       image.style.transform = `scale(${edit.zoom})`;
     });
@@ -183,6 +186,8 @@ function updatePhotoView(id) {
   document.querySelectorAll('img[data-preview-photo]').forEach(image => {
     if (image.dataset.previewPhoto !== id) return;
     image.src = src;
+    image.hidden = Boolean(edit.removed);
+    image.closest('.editor-photo-preview').classList.toggle('empty', Boolean(edit.removed));
     image.style.objectPosition = `${edit.x}% ${edit.y}%`;
     image.style.transform = `scale(${edit.zoom})`;
   });
@@ -278,13 +283,17 @@ function photoEditorCard(id, title, subtitle) {
   const src = edit.src || getOriginalImage(id);
   return `
     <article class="photo-editor-card" data-editor-photo="${escapeHtml(id)}">
-      <div class="editor-photo-preview">
-        <img src="${escapeHtml(src)}" alt="" data-preview-photo="${escapeHtml(id)}">
+      <div class="editor-photo-preview${edit.removed ? ' empty' : ''}">
+        <img src="${escapeHtml(src)}" alt="" data-preview-photo="${escapeHtml(id)}"${edit.removed ? ' hidden' : ''}>
       </div>
       <div class="editor-photo-details">
         <div class="editor-photo-heading">
           <div><h4>${escapeHtml(title)}</h4><p>${escapeHtml(subtitle)}</p></div>
-          <button type="button" class="restore-photo" data-restore-photo="${escapeHtml(id)}">Restaurar</button>
+          <div class="editor-photo-actions">
+            <button type="button" class="delete-photo" data-delete-photo="${escapeHtml(id)}"
+              aria-label="Eliminar foto de ${escapeHtml(title)}"${edit.removed ? ' disabled' : ''}>Eliminar</button>
+            <button type="button" class="restore-photo" data-restore-photo="${escapeHtml(id)}">Restaurar</button>
+          </div>
         </div>
         <label class="upload-photo">
           <span>Cambiar fotografía</span>
@@ -374,7 +383,7 @@ async function handlePhotoUpload(input) {
   }
 
   try {
-    const edit = { ...getPhotoEdit(id), src: await imageDataUrl(file) };
+    const edit = { ...getPhotoEdit(id), src: await imageDataUrl(file), removed: false };
     photoEdits.set(id, edit);
     updatePhotoView(id);
     await savePhotoEdit(id);
@@ -394,6 +403,19 @@ async function restorePhoto(id) {
     setEditorStatus('Fotografía original restaurada.');
   } catch (error) {
     setEditorStatus(`No se pudo restaurar la fotografía: ${error.message}`, true);
+  }
+}
+
+async function removePhoto(id) {
+  try {
+    const edit = { ...getPhotoEdit(id), src: '', removed: true };
+    photoEdits.set(id, edit);
+    updatePhotoView(id);
+    await savePhotoEdit(id);
+    renderPhotoEditor();
+    setEditorStatus('Fotografía eliminada de este navegador. Puedes restaurarla cuando quieras.');
+  } catch (error) {
+    setEditorStatus(`No se pudo eliminar la fotografía: ${error.message}`, true);
   }
 }
 
@@ -447,6 +469,11 @@ photoEditor.addEventListener('change', async event => {
   }
 });
 photoEditor.addEventListener('click', async event => {
+  const deleteButton = event.target.closest('[data-delete-photo]');
+  if (deleteButton) {
+    await removePhoto(deleteButton.dataset.deletePhoto);
+    return;
+  }
   const button = event.target.closest('[data-restore-photo]');
   if (button) await restorePhoto(button.dataset.restorePhoto);
 });
